@@ -1,11 +1,10 @@
 # src/agents/international_retriever.py
 import os
-import torch
-from sentence_transformers import SentenceTransformer
 from qdrant_client import QdrantClient
 from qdrant_client.models import Filter, FieldCondition, MatchValue
 from src.agents.state import AgentState
 from src.utils.logger import logger
+from src.utils.model_loader import get_embedding_model # Dùng model dùng chung
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -14,20 +13,7 @@ COLLECTION = "vilexagent_international"
 MODEL_NAME = "jinaai/jina-embeddings-v5-text-small"
 TOP_K = 5
 
-_model = None
 _client = None
-
-def get_model():
-    global _model
-    if _model is None:
-        device = "cuda" if torch.cuda.is_available() else "cpu"
-        _model = SentenceTransformer(
-            MODEL_NAME,
-            device=device,
-            model_kwargs={"dtype": torch.bfloat16},
-            trust_remote_code=True
-        )
-    return _model
 
 def get_client():
     global _client
@@ -36,13 +22,13 @@ def get_client():
     return _client
 
 def retrieve_international(query: str, domain: str) -> list[dict]:
-    model = get_model()
+    model = get_embedding_model() # Gọi model từ Singleton
     client = get_client()
 
     query_vector = model.encode(
         query,
-        task="retrieval",
-        prompt_name="query",
+        task="retrieval", 
+        prompt_name="query", 
         normalize_embeddings=True,
         convert_to_numpy=True
     ).tolist()

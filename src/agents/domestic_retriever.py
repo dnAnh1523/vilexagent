@@ -1,13 +1,11 @@
 # src/agents/domestic_retriever.py
 import os
-import torch
-from sentence_transformers import SentenceTransformer
 from qdrant_client import QdrantClient
 from qdrant_client.models import Filter, FieldCondition, MatchValue
 from src.agents.state import AgentState
 from src.utils.logger import logger
+from src.utils.model_loader import get_embedding_model # Dùng model dùng chung
 from dotenv import load_dotenv
-
 load_dotenv()
 
 COLLECTION = "vilexagent_domestic"
@@ -15,21 +13,8 @@ MODEL_NAME = "jinaai/jina-embeddings-v5-text-small"
 TOP_K = 5
 
 # Module-level singleton — load once, reuse across calls
-_model = None
-_client = None
 
-def get_model():
-    global _model
-    if _model is None:
-        device = "cuda" if torch.cuda.is_available() else "cpu"
-        logger.info(f"Loading embedding model on {device}...")
-        _model = SentenceTransformer(
-            MODEL_NAME,
-            device=device,
-            model_kwargs={"dtype": torch.bfloat16},
-            trust_remote_code=True
-        )
-    return _model
+_client = None
 
 def get_client():
     global _client
@@ -38,13 +23,13 @@ def get_client():
     return _client
 
 def retrieve_domestic(query: str, domain: str) -> list[dict]:
-    model = get_model()
+    model = get_embedding_model() # Gọi model từ Singleton
     client = get_client()
 
     query_vector = model.encode(
         query,
-        task="retrieval",
-        prompt_name="query",
+        task="retrieval", # Chỉ dùng retrieval cho Jina v5
+        prompt_name="query", # Bắt buộc phải có để phân biệt câu hỏi
         normalize_embeddings=True,
         convert_to_numpy=True
     ).tolist()
