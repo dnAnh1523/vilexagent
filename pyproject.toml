@@ -7,7 +7,7 @@ authors = [
 ]
 
 readme = "README.md"
-requires-python = "^3.12"
+requires-python = ">=3.12,<3.15"
 dependencies = [
     "langgraph (>=1.1.10,<2.0.0)",
     "langchain-google-genai (>=4.2.2,<5.0.0)",
@@ -26,9 +26,21 @@ dependencies = [
     "pydantic (>=2.13.3,<3.0.0)",
     "loguru (>=0.7.3,<0.8.0)",
     "datasets (>=4.8.5,<5.0.0)",
-    "huggingface-hub (>=1.13.0,<2.0.0)"
+    "huggingface-hub (>=1.13.0,<2.0.0)",
+    "peft (>=0.19.1,<0.20.0)",
+    "torch (>=2.11.0,<3.0.0)",
+    "accelerate (>=1.13.0,<2.0.0)",
+    "bitsandbytes (>=0.49.2,<0.50.0)"
 ]
 
+[[tool.poetry.source]]
+name = "pytorch-gpu"
+url = "https://download.pytorch.org/whl/cu130"
+priority = "explicit"
+
+
+[tool.poetry.dependencies]
+torch = {source = "pytorch-gpu"}
 [tool.poetry]
 package-mode = false
 [build-system]
