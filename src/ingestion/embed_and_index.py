@@ -73,10 +73,12 @@ def index_chunks(
 
         embeddings = model.encode(
             batch_texts,
+            task="retrieval",
+            prompt_name="document",
             batch_size=BATCH_SIZE,
             show_progress_bar=False,
             normalize_embeddings=True,
-            task="retrieval"
+            convert_to_numpy=True,
         )
 
         points = []
@@ -135,7 +137,7 @@ def embed_and_index():
         device=device,
         trust_remote_code=True,
         model_kwargs={
-            "torch_dtype": torch.float16,
+            "torch_dtype": torch.bfloat16,
             "default_task": "retrieval",
             "load_in_4bit": True,
         }
@@ -156,7 +158,7 @@ def embed_and_index():
             device=device, 
             trust_remote_code=True, 
             model_kwargs={
-                "torch_dtype": torch.float16, 
+                "torch_dtype": torch.bfloat16, 
                 "default_task": "retrieval", 
                 "load_in_4bit": True
             }

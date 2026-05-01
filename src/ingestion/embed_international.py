@@ -24,7 +24,7 @@ def embed_international():
     model = SentenceTransformer(
         MODEL_NAME,
         device=device,
-        model_kwargs={"torch_dtype": torch.float16, "default_task": "retrieval", "load_in_4bit": True},
+        model_kwargs={"torch_dtype": torch.bfloat16, "default_task": "retrieval", "load_in_4bit": True},
         trust_remote_code=True
     )
 
@@ -42,11 +42,12 @@ def embed_international():
         with torch.amp.autocast('cuda'):
             embeddings = model.encode(
                 batch_texts,
-                batch_size=BATCH_SIZE,
-                show_progress_bar=False,
-                normalize_embeddings=True,
-                convert_to_numpy=True,
-                task="retrieval"
+            task="retrieval",
+            prompt_name="document",
+            batch_size=BATCH_SIZE,
+            show_progress_bar=False,
+            normalize_embeddings=True,
+            convert_to_numpy=True,
             )
 
         points = []
