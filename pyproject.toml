@@ -1,0 +1,42 @@
+[project]
+name = "vilexagent"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Nhat Anh",email = "124007139+dnAnh1523@users.noreply.github.com"}
+]
+
+readme = "README.md"
+requires-python = "^3.12"
+dependencies = [
+    "langgraph (>=1.1.10,<2.0.0)",
+    "langchain-google-genai (>=4.2.2,<5.0.0)",
+    "langchain-community (>=0.4.1,<0.5.0)",
+    "qdrant-client (>=1.17.1,<2.0.0)",
+    "sentence-transformers (>=5.4.1,<6.0.0)",
+    "ragas (>=0.4.3,<0.5.0)",
+    "mlflow (>=3.11.1,<4.0.0)",
+    "pymupdf (>=1.27.2.3,<2.0.0.0)",
+    "beautifulsoup4 (>=4.14.3,<5.0.0)",
+    "underthesea (>=9.4.0,<10.0.0)",
+    "requests (>=2.33.1,<3.0.0)",
+    "paddlepaddle (>=3.3.1,<4.0.0)",
+    "paddleocr (>=3.5.0,<4.0.0)",
+    "python-dotenv (>=1.2.2,<2.0.0)",
+    "pydantic (>=2.13.3,<3.0.0)",
+    "loguru (>=0.7.3,<0.8.0)"
+]
+
+[tool.poetry]
+package-mode = false
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.0.3,<10.0.0)",
+    "pytest-asyncio (>=1.3.0,<2.0.0)",
+    "black (>=26.3.1,<27.0.0)",
+    "isort (>=8.0.1,<9.0.0)"
+]
