@@ -1,0 +1,4 @@
+﻿system,total,error_rate,avg_latency,faithfulness,context_precision,decomp_accuracy,crossref_accuracy,legal_currency_score
+Baseline1_NaiveRAG,30,0.0,3.3913,0.652,0.4106,,,
+Baseline2_RAGRerank,30,0.0,3.5653,0.6621,0.4287,,,
+ViLexAgent,30,0.0,8.7013,0.3947,0.5191,0.7667,0.6,1.0

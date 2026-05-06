@@ -1,17 +1,12 @@
 # src/agents/synthesizer.py
-import os
-from langchain_google_genai import ChatGoogleGenerativeAI
+from src.utils.llm import get_llm
 from src.agents.state import AgentState
 from src.utils.logger import logger
 from dotenv import load_dotenv
 
 load_dotenv()
 
-llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
-    google_api_key=os.getenv("GOOGLE_API_KEY"),
-    temperature=0
-)
+llm = get_llm()
 
 SYNTHESIS_PROMPT = """Bạn là trợ lý pháp lý chuyên về luật Việt Nam và các hiệp định thương mại quốc tế.
 

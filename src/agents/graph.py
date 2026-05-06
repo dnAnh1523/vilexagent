@@ -1,5 +1,4 @@
 # src/agents/graph.py
-import os
 from langgraph.graph import StateGraph, START, END
 from src.agents.state import AgentState
 from src.agents.query_decomposer import query_decomposer_node
@@ -69,16 +68,3 @@ def run_query(query: str) -> dict:
     logger.info(f"Expired docs: {result['has_expired_docs']}")
 
     return result
-
-if __name__ == "__main__":
-    # Test with all three query types
-    queries = [
-        # Type A — domestic only
-        "Hợp đồng lao động phải có những nội dung gì theo quy định hiện hành?",
-        # Type C — cross-corpus
-        "Việt Nam có đáp ứng các tiêu chuẩn lao động của CPTPP về tự do hiệp hội không?",
-    ]
-
-    for query in queries:
-        run_query(query)
-        print("\n" + "="*60 + "\n")

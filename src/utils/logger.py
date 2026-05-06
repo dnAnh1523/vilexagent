@@ -10,8 +10,15 @@ logger.add(
 )
 
 logger.add(
-    "logs/vilexagent.log",
+    "E:/vilexagent/logs/vilexagent.log",
     rotation="10 MB",
     retention="7 days",
     level="INFO"
+)
+
+logger.add(
+    "logs/ragas_tokens.log",
+    rotation="5 MB",
+    level="DEBUG",
+    filter=lambda record: "RAGAS LLM tokens" in record["message"]
 )

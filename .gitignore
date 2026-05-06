@@ -8,5 +8,5 @@ mlruns/
 *.egg-info/
 dist/
 .venv/
-
+model/
 logs/

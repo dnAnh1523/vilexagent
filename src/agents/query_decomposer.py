@@ -1,19 +1,13 @@
 # src/agents/query_decomposer.py
-import os
-import json
-from langgraph.graph import START
-from langchain_google_genai import ChatGoogleGenerativeAI
+from src.utils.llm import get_llm
 from src.agents.state import AgentState
 from src.utils.logger import logger
 from dotenv import load_dotenv
+from src.utils.json_utils import extract_json_from_llm_output
 
 load_dotenv()
 
-llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
-    google_api_key=os.getenv("GOOGLE_API_KEY"),
-    temperature=0
-)
+llm = get_llm()
 
 DECOMPOSER_PROMPT = """Bạn là một chuyên gia phân tích câu hỏi pháp lý Việt Nam.
 
@@ -47,40 +41,44 @@ def query_decomposer_node(state: AgentState) -> dict:
     query = state["original_query"]
     logger.info(f"Query Decomposer: '{query[:80]}'")
 
-    try:
-        response = llm.invoke(DECOMPOSER_PROMPT.format(query=query))
-        raw = response.content.strip()
+    last_error = None
 
-        # Strip markdown fences if present
-        if "```" in raw:
-            raw = raw.split("```")[1]
-            if raw.startswith("json"):
-                raw = raw[4:]
-        raw = raw.strip()
+    for attempt in range(3):
+        try:
+            response = llm.invoke(DECOMPOSER_PROMPT.format(query=query))
+            raw = response.content.strip()
 
-        parsed = json.loads(raw)
+            if not raw:
+                logger.warning(f"Attempt {attempt + 1}: empty response, retrying...")
+                last_error = "empty response from LLM"
+                continue
 
-        sub_questions = parsed["sub_questions"]
-        requires_international = parsed["requires_international"]
+            # Use shared robust extractor instead of brittle split
+            parsed = extract_json_from_llm_output(raw)
 
-        logger.success(f"Decomposed into {len(sub_questions)} sub-question(s)")
-        for sq in sub_questions:
-            logger.info(f"  → [{sq['source']}|{sq['domain']}] {sq['question']}")
+            sub_questions = parsed["sub_questions"]
+            requires_international = parsed["requires_international"]
 
-        return {
-            "sub_questions": sub_questions,
-            "requires_international": requires_international,
-            "error": None
-        }
+            logger.success(f"Decomposed into {len(sub_questions)} sub-question(s)")
+            for sq in sub_questions:
+                logger.info(f"  → [{sq['source']}|{sq['domain']}] {sq['question']}")
 
-    except Exception as e:
-        logger.error(f"Query Decomposer failed: {e}")
-        return {
-            "sub_questions": [{
-                "question": query,
-                "source": "domestic",
-                "domain": "labor"
-            }],
-            "requires_international": False,
-            "error": str(e)
-        }
+            return {
+                "sub_questions": sub_questions,
+                "requires_international": requires_international,
+                "error": None,
+            }
+
+        except Exception as e:
+            last_error = str(e)
+            logger.warning(f"Attempt {attempt + 1} failed: {last_error}")
+
+    # All 3 attempts exhausted — safe fallback
+    logger.error("Query Decomposer failed after 3 attempts, using safe fallback")
+    return {
+        "sub_questions": [
+            {"question": query, "source": "domestic", "domain": "labor"}
+        ],
+        "requires_international": False,
+        "error": last_error,
+    }

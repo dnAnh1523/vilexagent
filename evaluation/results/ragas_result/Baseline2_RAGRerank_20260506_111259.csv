@@ -1,0 +1,373 @@
+﻿id,type,domain,expected_source,expected_alignment,query,answer,reference,latency,decomp_score,crossref_score,currency_score,error,faithfulness,context_precision
+A01,type_a,labor,domestic,no_international,Hợp đồng lao động phải có những nội dung gì theo quy định hiện hành?,"<think>
+Okay, let's tackle this question about the essential contents of a labor contract according to current regulations in Vietnam. The user provided several legal provisions from different laws and decrees, so I need to parse through them carefully.
+
+First, I'll look at each of the mentioned articles. Article 23 mentions the names and addresses of the employer and legal representative, as well as the employee's personal details like name, birthdate, gender, residence, and ID number. Then, Article 29 adds job duties, working hours, rest times, salary, work location, contract duration, safety, hygiene, and social insurance. Article 7 refers to Article 23 again and adds conditions for food and accommodation if applicable, transportation costs upon contract termination, and time-related points. Article 3 seems to reiterate the information about the employer's name and address and the employee's details. Article 6 also talks about personal information of both parties, including passport numbers if applicable.
+
+I need to consolidate all these elements without duplication. The key points from each article are:
+
+- Employer's name, address, legal representative.
+- Employee's personal info: name, birthdate, gender, residence, ID/passport.
+- Job description, work hours, rest periods, salary, work location, contract term.
+- Safety, hygiene, social insurance.
+- Accommodation/food conditions if any.
+- Transportation costs upon termination.
+- Other specific terms as per regulations.
+
+I should check if there's any overlap or if some articles are from different legal documents. For example, Article 23 is from the Labor Code, while Article 6 references a decree (NĐ-CP). The user might be combining different sources, so the answer should integrate all required elements from both the Labor Code and relevant decrees.
+
+Also, need to ensure that all mandatory elements are covered. The user's question is about current regulations, so the answer should reflect the latest applicable laws. Since the provided articles are from different sources, the answer should list all the mandatory components mentioned across these provisions, ensuring nothing is missed.
+
+Finally, present the answer in a clear, structured manner, grouping similar items together and using bullet points or numbered lists for clarity.
+</think>
+
+Theo quy định hiện hành, hợp đồng lao động phải có những nội dung chủ yếu sau đây (tổng hợp từ các điều luật được trích dẫn):
+
+1. **Thông tin các bên**:  
+   - Tên, địa chỉ người sử dụng lao động (hoặc người đại diện hợp pháp).  
+   - Họ tên, ngày tháng năm sinh, giới tính, địa chỉ cư trú, số chứng minh nhân dân/hộ chiếu của người lao động.  
+
+2. **Nội dung công việc và điều kiện làm việc**:  
+   - Công việc phải làm, địa điểm làm việc.  
+   - Thời giờ làm việc, thời giờ nghỉ ngơi.  
+   - Tiền lương, phương thức thanh toán.  
+   - Thời hạn hợp đồng (hợp đồng xác định thời hạn hoặc không xác định thời hạn).  
+
+3. **Bảo đảm pháp lý và quyền lợi**:  
+   - Điều kiện an toàn lao động, vệ sinh lao động.  
+   - Bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp (nếu có).  
+
+4. **Các điều khoản bổ sung (nếu có)**:  
+   - Điều kiện ăn, ở cho người lao động (nếu người sử dụng lao động cung cấp).  
+   - Tiền tàu xe đưa người lao động về nơi cư trú khi chấm dứt hợp đồng đúng thời hạn.  
+   - Các thỏa thuận khác phù hợp với quy định pháp luật (ví dụ: chế độ đào tạo, kỷ luật, giải quyết tranh chấp...).  
+
+**Lưu ý**:  
+- Các nội dung bắt buộc phải được ghi rõ trong hợp đồng lao động theo quy định tại **Điều 23, 29 Bộ luật Lao động 2019** và **Nghị định 27/2014/NĐ-CP**.  
+- Hợp đồng lao động phải được lập thành văn bản, trừ trường hợp lao động làm việc theo hợp đồng không xác định thời hạn mà hai bên thỏa thuận bằng lời nói (theo quy định cụ thể).  
+
+Việc thiếu hoặc vi phạm các nội dung bắt buộc có thể dẫn đến hợp đồng lao động vô hiệu hoặc bị xử lý vi phạm hành chính theo quy định pháp luật.","Theo Điều 21 Bộ luật Lao động 2019, hợp đồng lao động phải có các nội dung chủ yếu: tên địa chỉ người sử dụng lao động, thông tin người lao động, công việc và địa điểm làm việc, thời hạn hợp đồng, mức lương và hình thức trả lương, thời giờ làm việc và nghỉ ngơi, bảo hiểm xã hội, đào tạo bồi dưỡng.",4.9,,,,,,0.249999999975
+A02,type_a,labor,domestic,no_international,Thời gian thử việc tối đa theo pháp luật lao động Việt Nam là bao lâu?,"Thời gian thử việc tối đa theo pháp luật lao động Việt Nam là 60 ngày đối với công việc có chức danh nghề cần trình độ chuyên môn, kỹ thuật từ cao đẳng trở lên.","Theo Bộ luật Lao động 2019, thời gian thử việc không quá 180 ngày với công việc của người quản lý doanh nghiệp, không quá 60 ngày với công việc có chức danh nghề nghiệp cần trình độ chuyên môn kỹ thuật từ cao đẳng trở lên, không quá 30 ngày với các trường hợp còn lại.",2.87,,,,,,0.3333333333
+A03,type_a,labor,domestic,no_international,Người lao động có quyền đơn phương chấm dứt hợp đồng lao động không xác định thời hạn trong trường hợp nào?,"Người lao động có quyền đơn phương chấm dứt hợp đồng lao động không xác định thời hạn trong các trường hợp sau:
+
+- Không được bố trí theo đúng hợp đồng lao động;
+
+- Không được trả lương đủ hoặc đúng hạn;
+
+- Bị ngược đãi; 
+
+- Bị đánh đập hoặc có lời nói, hành vi nhục mạ, hành vi làm ảnh hưởng đến sức khoẻ, danh dự, nhân phẩm của mình; 
+
+- Thực hiện công việc bị hiếp bức, bị bóc lột sức lao động;
+
+- Lao động nữ mang thai có lý do phải nghỉ việc;
+
+- Có đủ tuổi nghỉ hưu theo quy định của pháp luật; 
+
+- Người lao động ốm đau, tai nạn lao động, bệnh nghề nghiệp hoặc bị ốm đau, tai nạn mà không phải là tai nạn lao động, bệnh nghề nghiệp do người sử dụng lao động yêu cầu; 
+
+- Người lao động có quyền đơn phương chấm dứt hợp đồng lao động khi người sử dụng lao động không cung cấp thông tin về nội dung bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp cho mình.","Theo Bộ luật Lao động 2019, người lao động làm việc theo hợp đồng không xác định thời hạn có quyền đơn phương chấm dứt hợp đồng nhưng phải báo trước ít nhất 45 ngày.",3.33,,,,,0.1111111111111111,0.0
+A04,type_a,labor,domestic,no_international,Mức lương tối thiểu vùng được quy định như thế nào?,Không có thông tin về mức lương tối thiểu vùng trong đoạn văn trên.,"Lương tối thiểu vùng được Chính phủ quy định và điều chỉnh định kỳ trên cơ sở khuyến nghị của Hội đồng tiền lương quốc gia, áp dụng theo 4 vùng khác nhau tùy theo điều kiện kinh tế xã hội của từng địa phương.",2.96,,,,,1.0,0.0
+A05,type_a,labor,domestic,no_international,Thời giờ làm việc bình thường của người lao động theo quy định là bao nhiêu giờ?,Thời giờ làm việc bình thường không quá 08 giờ trong 01 ngày và 48 giờ trong 01 tuần.,"Theo Bộ luật Lao động 2019, thời giờ làm việc bình thường không quá 8 giờ trong 1 ngày và không quá 48 giờ trong 1 tuần.",2.97,,,,,1.0,0.99999999995
+A06,type_a,food_safety,domestic,no_international,Điều kiện bảo đảm an toàn thực phẩm trong sản xuất thực phẩm là gì?,"Điều kiện bảo đảm an toàn thực phẩm trong sản xuất thực phẩm bao gồm:
+
+- Khu vực sản xuất thực phẩm phải được bố trí tại địa điểm không bị ngập nước, đọng nước, ô nhiễm bụi, hóa chất độc hại, không bị ảnh hưởng bởi động vật, côn trùng, vi sinh vật gây hại và có khoảng cách an toàn với các nguồn gây độc hại, nguồn gây ô nhiễm và các yếu tố gây hại khác.
+
+- Cơ sở sản xuất, kinh doanh thực phẩm phải có địa điểm, diện tích thích hợp, có khoảng cách an toàn đối với nguồn gây độc hại, nguồn gây ô nhiễm và các yếu tố gây hại khác.
+
+- Cơ sở sản xuất, kinh doanh thực phẩm nhỏ lẻ phải có khoảng cách an toàn đối với nguồn gây độc hại, nguồn gây ô nhiễm và có đủ nước đạt quy chuẩn kỹ thuật.
+
+- Cơ sở sản xuất thực phẩm tươi sống phải bảo đảm các điều kiện về đất canh tác, nguồn nước, địa điểm sản xuất để sản xuất thực phẩm an toàn.
+
+- Cơ sở sản xuất thực phẩm bảo vệ sức khỏe phải đáp ứng điều kiện chung về bảo đảm an toàn thực phẩm được quy định tại khoản 1 Điều 19, khoản 1 Điều 20, khoản 1 Điều 21 Luật an toàn thực phẩm và những quy định cụ thể khác.","Theo Luật An toàn thực phẩm, cơ sở sản xuất thực phẩm phải có địa điểm, diện tích thích hợp, có khoảng cách an toàn với nguồn ô nhiễm; có đủ nước sạch; có trang thiết bị phù hợp; đảm bảo điều kiện vệ sinh; có người quản lý đủ năng lực.",3.41,,,,,1.0,0.4777777777618519
+A07,type_a,food_safety,domestic,no_international,Cơ sở sản xuất thực phẩm có cần được cấp Giấy chứng nhận đủ điều kiện an toàn thực phẩm không?,"Có, cơ sở sản xuất thực phẩm phải có Giấy chứng nhận cơ sở đủ điều kiện an toàn thực phẩm khi hoạt động, trừ một số trường hợp cụ thể được quy định trong các điều luật liên quan.","Theo Luật An toàn thực phẩm và Nghị định 15/2018, cơ sở sản xuất, kinh doanh thực phẩm phải có Giấy chứng nhận cơ sở đủ điều kiện an toàn thực phẩm, trừ một số trường hợp được miễn theo quy định.",2.93,,,,,0.6666666666666666,
+A08,type_a,food_safety,domestic,no_international,Quy định về ghi nhãn thực phẩm bao gồm những nội dung gì?,"Quy định về ghi nhãn thực phẩm bao gồm những nội dung sau:
+
+- Việc ghi nhãn thực phẩm phải tuân thủ ""Quy chế ghi nhãn hàng hoá lưu thông trong nước và hàng hoá xuất khẩu, nhập khẩu"" 
+- Nghiêm cấm việc tự thay đổi nhãn thực phẩm, thay đổi hạn sử dụng.
+- Thực phẩm đóng gói sẵn phải được ghi nhãn thực phẩm, ghi đầy đủ, chính xác, rõ ràng, trung thực về thành phần thực phẩm và các nội dung khác theo quy định của pháp luật; 
+- Không được ghi trên nhãn thực phẩm dưới bất kỳ hình thức nào về thực phẩm có công hiệu thay thế thuốc chữa bệnh.
+- Các thực phẩm bao gói sẵn phải bắt buộc ghi nhãn 
+- Tùy từng loại thực phẩm bao gói sẵn, ngoài các quy định tại Khoản 1 Điều này, nội dung bắt buộc ghi nhãn còn phải đáp ứng một số quy định 
+- Thông tin bắt buộc ghi nhãn còn phải đáp ứng một số quy định đối với thực phẩm chức năng. 
+- Tổ chức, cá nhân sản xuất, nhập khẩu thực phẩm, phụ gia thực phẩm, chất hỗ trợ chế biến thực phẩm tại Việt Nam phải thực hiện việc ghi nhãn thực phẩm theo quy định của pháp luật về nhãn hàng hóa.","Nhãn thực phẩm phải ghi tên thực phẩm, thành phần, hàm lượng tịnh, ngày sản xuất, hạn sử dụng, hướng dẫn bảo quản và sử dụng, tên và địa chỉ cơ sở sản xuất, xuất xứ hàng hóa.",3.33,,,,,1.0,0.32499999998375
+A09,type_a,food_safety,domestic,no_international,Thực phẩm nhập khẩu vào Việt Nam phải đáp ứng những yêu cầu gì?,"Thực phẩm nhập khẩu vào Việt Nam phải đáp ứng những yêu cầu sau:
+
+- Đáp ứng các yêu cầu về chất lượng, vệ sinh an toàn thực phẩm theo quy định của pháp luật Việt Nam.
+- Sản xuất tại quốc gia được cơ quan có thẩm quyền của Việt Nam công nhận đáp ứng đầy đủ các yêu cầu về bảo đảm an toàn vệ sinh thực phẩm (ATTP) hàng hóa theo quy định của Việt Nam.
+- Được cấp giấy chứng nhận công bố tiêu chuẩn sản phẩm.
+- Có giấy xác nhận đã kiểm tra đạt yêu cầu vệ sinh an toàn thực phẩm của cơ quan có thẩm quyền.
+- Được cơ quan kiểm tra nhà nước cấp một trong các giấy tờ sau: Thông báo thực phẩm đạt yêu cầu nhập khẩu hoặc giấy chứng nhận khác. 
+
+Bao gói hoặc chứa đựng trong các bao bì đảm bảo vệ sinh.","Thực phẩm nhập khẩu phải đáp ứng yêu cầu an toàn thực phẩm của Việt Nam và được kiểm tra nhà nước về an toàn thực phẩm tại cửa khẩu, phải có đầy đủ giấy tờ chứng minh xuất xứ và kiểm dịch.",3.16,,,,,0.875,
+A10,type_a,food_safety,domestic,no_international,Phụ gia thực phẩm được sử dụng trong sản xuất thực phẩm phải tuân thủ những quy định gì?,"Phụ gia thực phẩm được sử dụng trong sản xuất thực phẩm phải tuân thủ các quy định sau:
+
+- Sử dụng phụ gia thực phẩm trong thực phẩm phải bảo đảm:
+  - Phụ gia thực phẩm được phép sử dụng và đúng đối tượng thực phẩm;
+  - Không vượt quá mức sử dụng tối đa đối với một loại thực phẩm hoặc nhóm thực phẩm;
+  - Hạn chế đến mức thấp nhất lượng phụ gia thực phẩm.
+
+- Chỉ được sử dụng phụ gia thực phẩm trong danh mục các chất phụ gia được phép sử dụng trong thực phẩm do Bộ Y tế quy định.
+
+- Cơ sở sản xuất, kinh doanh phụ gia thực phẩm phải đáp ứng đầy đủ các yêu cầu được quy định.
+
+- Tuân thủ các điều kiện quy định về điều kiện bảo đảm an toàn thực phẩm đối với phụ gia thực phẩm.
+
+- Việc sử dụng nguyên liệu và bao bì chứa đựng dùng trong sản xuất phụ gia thực phẩm, chất hỗ trợ chế biến thực phẩm phải đáp ứng các yêu cầu.","Chỉ được sử dụng phụ gia thực phẩm trong danh mục được phép sử dụng do Bộ Y tế ban hành, đúng đối tượng thực phẩm, đúng liều lượng và phải ghi rõ trên nhãn.",3.37,,,,,1.0,0.8666666666377778
+B01,type_b,labor,domestic,no_international,Nếu người sử dụng lao động đơn phương chấm dứt hợp đồng trái pháp luật thì phải bồi thường những gì cho người lao động?,"Nếu người sử dụng lao động đơn phương chấm dứt hợp đồng trái pháp luật thì phải:
+
+- Nhận người lao động trở lại làm việc theo hợp đồng lao động đã giao kết.
+
+- Trả tiền lương, bảo hiểm xã hội, bảo hiểm y tế trong những ngày người lao động không được làm việc.
+
+- Bồi thường một khoản tiền tương ứng với tiền lương trong những ngày người lao động không được làm việc. 
+
+- Cộng với ít nhất 01 tháng tiền lương theo hợp đồng lao động.","Theo Bộ luật Lao động 2019, người sử dụng lao động đơn phương chấm dứt hợp đồng trái pháp luật phải nhận người lao động trở lại làm việc, trả tiền lương và các quyền lợi trong thời gian không được làm việc, trả thêm ít nhất 2 tháng tiền lương. Nếu người lao động không muốn trở lại, người sử dụng phải trả thêm trợ cấp thôi việc.",2.98,,,,,1.0,0.8333333332916666
+B02,type_b,labor,domestic,no_international,Điều kiện để thành lập tổ chức đại diện người lao động tại doanh nghiệp là gì và tổ chức này có quyền hạn gì?,"Dựa trên các thông tin đã cung cấp, Điều kiện để thành lập tổ chức đại diện người lao động tại doanh nghiệp (công đoàn cơ sở) và quyền hạn của tổ chức này có thể được hiểu như sau:
+
+Điều kiện để thành lập tổ chức đại diện người lao động tại doanh nghiệp:
+
+- **Doanh nghiệp đã hoạt động**: Đối với các doanh nghiệp đang hoạt động và chưa có tổ chức công đoàn, Liên đoàn lao động cấp tỉnh phải thành lập tổ chức công đoàn trong thời hạn sáu tháng kể từ ngày Bộ Luật Lao động có hiệu lực.
+
+- **Doanh nghiệp mới thành lập**: Đối với doanh nghiệp mới thành lập, thời hạn để thành lập tổ chức công đoàn là sáu tháng kể từ ngày doanh nghiệp bắt đầu hoạt động.
+
+- **Người lao động có quyền thành lập, gia nhập và hoạt động công đoàn**: Theo Điều 189, người lao động trong doanh nghiệp có quyền thành lập, gia nhập và hoạt động công đoàn theo quy định của Luật Công đoàn.
+
+Quyền hạn của tổ chức đại diện người lao động (công đoàn cơ sở):
+
+- **Đại diện và bảo vệ quyền, lợi ích hợp pháp**: Công đoàn có quyền và trách nhiệm đại diện, bảo vệ quyền, lợi ích hợp pháp, chính đáng của người lao động (theo Điều 17 và Điều 20).
+
+- **Quyền và trách nhiệm cụ thể**: Công đoàn cấp trên cơ sở có quyền và trách nhiệm vận động, hỗ trợ và hướng dẫn các hoạt động công đoàn tại doanh nghiệp.
+
+Tóm lại, điều kiện chính để thành lập tổ chức đại diện người lao động tại doanh nghiệp là thời gian hoạt động của doanh nghiệp (sáu tháng kể từ khi hoạt động hoặc từ khi Bộ Luật Lao động có hiệu lực) và sự sẵn sàng của người lao động trong việc thành lập hoặc gia nhập công đoàn. Tổ chức đại diện này có quyền hạn trong việc đại diện và bảo vệ quyền, lợi ích hợp pháp của người lao động.","Theo Bộ luật Lao động 2019 và Nghị định 145/2020, tổ chức đại diện người lao động tại doanh nghiệp được thành lập khi có đủ số lượng thành viên tối thiểu theo quy định. Tổ chức này có quyền thương lượng tập thể, đình công hợp pháp và đại diện cho người lao động trong quan hệ lao động.",3.77,,,,,0.75,0.19999999998
+B03,type_b,labor,domestic,no_international,Thủ tục giải quyết tranh chấp lao động cá nhân theo trình tự như thế nào?,"Tranh chấp lao động cá nhân phải thông qua thủ tục hòa giải của hòa giải viên lao động trước khi yêu cầu tòa án giải quyết.
+
+Trong thời hạn 05 ngày làm việc kể từ ngày nhận được yêu cầu hòa giải, hòa giải viên lao động phải kết thúc hòa giải.
+
+Việc tiến hành hòa giải được thực hiện các bước sau:
+
+1. Xác định thời hiệu yêu cầu giải quyết tranh chấp: Thời hiệu yêu cầu giải quyết tranh chấp lao động cá nhân là 03 tháng kể từ ngày phát sinh tranh chấp.
+
+2. Hòa giải viên lao động tiến hành hòa giải với sự tham gia của các bên tranh chấp hoặc đại diện được ủy quyền của họ.
+
+Tại phiên họp hòa giải, phải có mặt hai bên tranh chấp hoặc đại diện được ủy quyền của họ.
+
+Chậm nhất bảy ngày, kể từ ngày nhận được đơn yêu cầu hòa giải, Hội đồng hòa giải lao động cơ sở tiến hành hòa giải.
+
+Nếu không bắt buộc phải qua thủ tục hòa giải: 
+
+- Các tranh chấp lao động cá nhân liên quan đến việc xử lý kỷ luật lao động theo hình thức sa thải.
+
+- Các tranh chấp lao động cá nhân liên quan đến việc đơn phương chấm dứt hợp đồng lao động.","Theo Bộ luật Lao động 2019, tranh chấp lao động cá nhân phải qua hòa giải viên lao động trước khi khởi kiện ra Tòa án, trừ một số tranh chấp được khởi kiện thẳng ra Tòa án. Thời hạn hòa giải là 5 ngày làm việc.",3.38,,,,,0.875,
+B04,type_b,labor,domestic,no_international,Người lao động nước ngoài làm việc tại Việt Nam phải đáp ứng những điều kiện gì và có cần giấy phép lao động không?,"Người lao động nước ngoài làm việc tại Việt Nam phải đáp ứng những điều kiện sau:
+
+- Có năng lực hành vi dân sự đầy đủ;
+
+- Có trình độ chuyên môn, tay nghề và sức khỏe phù hợp với yêu cầu công việc;
+
+- Không nằm trong trường hợp bị cấm xuất cảnh
+
+Và người lao động nước ngoài làm việc tại Việt Nam cần giấy phép lao động trừ một số trường hợp quy định. Giấy phép lao động là một yêu cầu bắt buộc đối với người lao động nước ngoài làm việc tại Việt Nam, nhằm đảm bảo rằng họ có đủ kỹ năng, kinh nghiệm và sức khỏe để thực hiện công việc và tuân thủ các quy định pháp luật của Việt Nam.","Theo Nghị định 152/2020, người lao động nước ngoài làm việc tại Việt Nam phải có giấy phép lao động do Bộ Lao động Thương binh và Xã hội hoặc Sở Lao động cấp, trừ một số trường hợp miễn. Phải đáp ứng điều kiện sức khỏe, trình độ chuyên môn và không có tiền án về an ninh quốc gia.",3.7,,,,,0.5714285714285714,0.94999999997625
+B05,type_b,labor,domestic,no_international,Chế độ trợ cấp thôi việc và trợ cấp mất việc làm khác nhau như thế nào?,"Dựa trên thông tin cung cấp, chế độ trợ cấp thôi việc và trợ cấp mất việc làm có một số điểm khác biệt chính như sau:
+
+1. **Trợ cấp thôi việc:**
+   - Được chi trả cho người lao động đã làm việc thường xuyên cho người sử dụng lao động từ đủ 12 tháng trở lên.
+   - Khi hợp đồng lao động chấm dứt theo quy định tại các khoản cụ thể (ví dụ: Điều 48 của Bộ luật Lao động).
+   - Mức trợ cấp thôi việc thường được tính bằng 1/2 tháng tiền công hoặc tiền lương và phụ cấp lương (nếu có) cho mỗi năm làm việc.
+
+2. **Trợ cấp mất việc làm:**
+   - Thông tin cụ thể về trợ cấp mất việc làm không được nêu rõ trong đoạn văn cung cấp, nhưng thường liên quan đến trường hợp người lao động bị mất việc làm do sự kiện bất ngờ hoặc do công ty không có đủ điều kiện để tiếp tục thuê người lao động.
+   - Điều kiện và mức trợ cấp có thể khác với trợ cấp thôi việc.
+
+Ngoài ra, một điểm quan trọng khác là thời gian người lao động đóng bảo hiểm thất nghiệp không được tính để hưởng trợ cấp thôi việc hoặc trợ cấp mất việc làm theo quy định của pháp luật về lao động và pháp luật về bảo hiểm xã hội. 
+
+Tóm lại, trợ cấp thôi việc và trợ cấp mất việc làm có các quy định khác nhau về điều kiện, mức hưởng và thời gian tính trợ cấp.","Theo Bộ luật Lao động 2019, trợ cấp thôi việc áp dụng khi người lao động nghỉ việc tự nguyện, mức 1/2 tháng lương cho mỗi năm làm việc. Trợ cấp mất việc làm áp dụng khi doanh nghiệp thay đổi cơ cấu, mức 1 tháng lương cho mỗi năm làm việc, tối thiểu 2 tháng lương.",3.62,,,,,0.625,
+B06,type_b,food_safety,domestic,no_international,Doanh nghiệp xuất khẩu thực phẩm sang EU cần phải đáp ứng những yêu cầu pháp lý nào theo quy định Việt Nam?,"Để xuất khẩu thực phẩm sang EU, doanh nghiệp cần đáp ứng các yêu cầu pháp lý sau theo quy định của Việt Nam:
+
+1. **Cơ sở sản xuất và bảo quản**: Doanh nghiệp phải sản xuất và bảo quản thực phẩm tại cơ sở có tên trong danh sách các cơ sở tham gia chương trình chứng nhận xuất khẩu theo thị trường EU.
+
+2. **An toàn thực phẩm và ghi nhãn**: Thực phẩm xuất khẩu phải đáp ứng các quy định về an toàn thực phẩm và ghi nhãn hàng hóa theo quy định của EU. Điều này bao gồm việc tuân thủ các tiêu chuẩn an toàn thực phẩm, quy định về dư lượng thuốc bảo vệ thực vật, và ghi nhãn các thông tin bắt buộc.
+
+3. **Điều kiện bảo đảm an toàn**: Thực phẩm xuất khẩu phải đáp ứng các điều kiện bảo đảm an toàn thực phẩm của Việt Nam và phù hợp với quy định về an toàn thực phẩm của EU.
+
+4. **Chứng nhận xuất khẩu**: Doanh nghiệp cần tham gia chương trình chứng nhận xuất khẩu của Việt Nam để đảm bảo rằng sản phẩm của họ đáp ứng các tiêu chuẩn cần thiết để tiếp cận thị trường EU.
+
+5. **Trách nhiệm của tổ chức, hộ gia đình, cá nhân nhập khẩu thực phẩm (áp dụng cho xuất khẩu)**: Mặc dù điều này áp dụng trực tiếp cho nhập khẩu, nhưng tinh thần của quy định là doanh nghiệp xuất khẩu cũng cần đảm bảo vệ sinh an toàn đối với thực phẩm xuất khẩu.
+
+Nhìn chung, để xuất khẩu thực phẩm sang EU, doanh nghiệp Việt Nam cần tuân thủ các quy định pháp lý liên quan đến an toàn thực phẩm, chứng nhận xuất khẩu, và các yêu cầu cụ thể của thị trường EU.","Doanh nghiệp xuất khẩu thực phẩm sang EU cần có Giấy chứng nhận đủ điều kiện an toàn thực phẩm, đăng ký với cơ quan có thẩm quyền, đáp ứng các quy định về kiểm dịch, truy xuất nguồn gốc và ghi nhãn theo quy định của cả Việt Nam và EU.",3.57,,,,,0.23076923076923078,0.49999999995
+B07,type_b,food_safety,domestic,no_international,Quy trình thu hồi sản phẩm thực phẩm không an toàn được quy định như thế nào?,"## Quy trình thu hồi sản phẩm thực phẩm không an toàn 
+
+Căn cứ Điều 4 Thông tư quy định, trình tự thu hồi tự nguyện được quy định như sau:
+
+- Trong thời gian tối đa **24 giờ**, kể từ thời điểm phát hiện hoặc nhận được thông tin phản ánh về sản phẩm không bảo đảm an toàn nếu xác định sản phẩm thuộc trường hợp phải thu hồi, chủ sản phẩm có trách nhiệm:
+
+  - Thông báo bằng điện thoại, email hoặc các hình thức khác về việc thu hồi cho các nhà phân phối, cơ sở bán lẻ, tiêu thụ sản phẩm; đồng thời thông báo cho cơ quan có thẩm quyền về việc thu hồi sản phẩm theo mẫu tại Phụ lục 02 ban hành kèm theo Thông tư này
+
+  - Gửi thông báo thu hồi sản phẩm tới các cơ quan truyền thông, báo chí để đăng tải trên trang thông tin điện tử và các phương tiện thông tin đại chúng khác; 
+
+- **Trong thời gian tối đa 72 giờ**, kể từ thời điểm ban hành thông báo thu hồi, chủ sản phẩm phải hoàn thành việc thông báo thu hồi tới tất cả các nhà phân phối, cơ sở bán lẻ, tiêu thụ sản phẩm.
+
+  - Chủ sản phẩm phải phối hợp với các nhà phân phối, cơ sở bán lẻ, tiêu thụ sản phẩm để thực hiện thu hồi sản phẩm không bảo đảm an toàn.
+
+Ngoài ra, tại Điều 8 có quy định các hình thức thu hồi thực phẩm nông lâm sản không bảo đảm an toàn gồm: 
+
+- Thu hồi tự nguyện do cơ sở tự thu hồi; 
+
+- Thu hồi bắt buộc do cơ quan có thẩm quyền yêu cầu.","Theo Luật An toàn thực phẩm, khi phát hiện thực phẩm không an toàn, tổ chức cá nhân sản xuất kinh doanh phải chủ động thu hồi, thông báo cho cơ quan nhà nước có thẩm quyền và người tiêu dùng, xử lý thực phẩm thu hồi theo quy định.",3.56,,,,,0.36363636363636365,
+B08,type_b,food_safety,domestic,no_international,Trách nhiệm của Bộ Y tế và Bộ Nông nghiệp trong quản lý an toàn thực phẩm được phân công như thế nào?,"Bộ Y tế và Bộ Nông nghiệp có trách nhiệm như sau:
+
+- **Bộ Y tế:** 
+  - Chịu trách nhiệm trước Chính phủ thực hiện quản lý nhà nước về vệ sinh an toàn thực phẩm.
+  - Trình Thủ tướng Chính phủ quyết định thành lập Viện Kiểm nghiệm an toàn vệ sinh thực phẩm quốc gia.
+  - Quyết định thành lập theo thẩm quyền và quy định, chức năng, nhiệm vụ, quyền hạn, cơ cấu tổ chức và biên chế của các đơn vị thuộc Bộ.
+  - Chịu trách nhiệm quản lý nhà nước về an toàn thực phẩm đối với những sản phẩm thực phẩm và cơ sở sản xuất, kinh doanh các sản phẩm thực phẩm theo quy định tại Phụ lục 1.
+
+- **Bộ Nông nghiệp và Phát triển Nông thôn:** 
+  - Chủ trì xây dựng, ban hành hoặc trình cơ quan nhà nước có thẩm quyền ban hành và tổ chức thực hiện các chính sách, chiến lược, quy hoạch, kế hoạch, văn bản quy phạm pháp luật về an toàn thực phẩm thuộc lĩnh vực được phân công quản lý.","Theo Luật An toàn thực phẩm và Nghị định 15/2018, Bộ Y tế quản lý thực phẩm chức năng, phụ gia, nước uống đóng gói; Bộ Nông nghiệp quản lý nông sản, thủy sản, rau quả tươi sống; Bộ Công Thương quản lý thực phẩm chế biến, đồ uống có cồn.",3.38,,,,,1.0,0.19999999998
+B09,type_b,food_safety,domestic,no_international,Mức xử phạt vi phạm hành chính về an toàn thực phẩm như thế nào?,Mức phạt tiền tối đa đối với mỗi hành vi vi phạm hành chính về an toàn thực phẩm là 100.000.000 đồng đối với cá nhân và 200.000.000 đồng đối với tổ chức.,"Theo Nghị định 115/2018 sửa đổi bởi Nghị định 124/2021, mức phạt tiền tối đa về an toàn thực phẩm đối với cá nhân là 100 triệu đồng, đối với tổ chức là 200 triệu đồng, ngoài ra có thể bị đình chỉ hoạt động và thu hồi giấy phép.",2.99,,,,,1.0,0.9999999999
+B10,type_b,labor,domestic,no_international,Quy định về làm thêm giờ tối đa và điều kiện để được làm thêm giờ là gì?,"Dựa trên thông tin cung cấp, quy định về làm thêm giờ tối đa và điều kiện để được làm thêm giờ như sau:
+
+1. **Quy định về làm thêm giờ tối đa:**
+   - Tổng số giờ làm việc của ca làm việc và số giờ làm thêm không quá 12 giờ trong 01 ngày.
+   - Số giờ làm thêm không quá 300 giờ trong 01 năm.
+
+2. **Điều kiện để được làm thêm giờ:**
+   - Người sử dụng lao động được sử dụng người lao động làm thêm giờ khi đáp ứng đủ các điều kiện theo pháp luật, thỏa ước lao động tập thể hoặc theo nội quy lao động. 
+
+Ngoài ra, một số quy định chi tiết khác về làm thêm giờ như sau:
+
+- Thời gian làm thêm giờ là khoảng thời gian làm việc ngoài ca làm việc hoặc ngoài phiên làm việc quy định.
+- Không quá 50% số giờ làm việc bình thường trong 01 ngày khi làm thêm; khi áp dụng quy định làm việc theo tuần thì tổng số giờ làm việc bình thường và số giờ làm thêm không quá 12 giờ trong 01 ngày.
+- Không quá 12 giờ trong 01 ngày khi làm thêm giờ trong một số trường hợp đặc biệt.","Theo Bộ luật Lao động 2019, thời gian làm thêm không quá 40 giờ/tháng và 200 giờ/năm, một số ngành được tối đa 300 giờ/năm. Điều kiện làm thêm phải được người lao động đồng ý, trả lương tăng thêm theo quy định và đảm bảo sức khỏe người lao động.",3.5,,,,,1.0,0.36666666664833336
+C01,type_c,labor,both,conflict,Việt Nam có đáp ứng các tiêu chuẩn lao động của CPTPP về tự do hiệp hội không?,"Người lao động Việt Nam có quyền thành lập, gia nhập và hoạt động công đoàn. Theo Điều 5 của văn bản pháp luật, người lao động Việt Nam có quyền thành lập, gia nhập và hoạt động công đoàn. Điều này có thể được xem là phù hợp với các tiêu chuẩn lao động của CPTPP về tự do hiệp hội.
+
+Tuy nhiên, theo thông tin được cung cấp, Điều 5 cũng cho biết người lao động là công dân nước ngoài làm việc tại Việt Nam theo hợp đồng lao động có thời hạn từ đủ 12 tháng trở lên được gia nhập và hoạt động công đoàn. Điều này có thể được xem là hạn chế, vì CPTPP yêu cầu các nước thành viên đảm bảo quyền tự do hiệp hội và cho phép tất cả người lao động, không phân biệt quốc tịch, được thành lập và gia nhập hiệp hội.
+
+Vì vậy, có thể nói rằng Việt Nam cơ bản đáp ứng các tiêu chuẩn lao động của CPTPP về tự do hiệp hội, nhưng vẫn còn một số hạn chế đối với người lao động nước ngoài.","CPTPP Điều 19.3 yêu cầu các bên bảo đảm quyền tự do hiệp hội và thương lượng tập thể theo tiêu chuẩn ILO. Pháp luật Việt Nam hiện hành quy định cơ cấu công đoàn duy nhất dưới sự lãnh đạo của Đảng, tạo ra khoảng cách với yêu cầu quốc tế về đa công đoàn và độc lập.",3.29,,,,,0.6875,0.49999999995
+C02,type_c,labor,both,gap,EVFTA yêu cầu gì về tiêu chuẩn lao động và Việt Nam đã thực hiện như thế nào?,"Không có thông tin trong các điều khoản bạn cung cấp đề cập đến EVFTA (Hiệp định Thương mại Tự do giữa Liên minh Châu Âu và Việt Nam) và các yêu cầu về tiêu chuẩn lao động trong hiệp định này.
+
+Tuy nhiên, dựa trên các điều khoản bạn cung cấp, có thể thấy rằng Nghị định của Việt Nam đã quy định các trách nhiệm của tổ chức, cá nhân nước ngoài khi sử dụng lao động Việt Nam (Điều 14), trách nhiệm của người lao động Việt Nam khi làm việc cho tổ chức, cá nhân nước ngoài (Điều 7), và các quy định khác liên quan đến việc sử dụng lao động.
+
+Cụ thể, Điều 14 yêu cầu tổ chức, cá nhân nước ngoài phải thực hiện đúng các quy định của Bộ luật Lao động, Nghị định này và các quy định khác có liên quan của pháp luật Việt Nam. Điều 7 yêu cầu người lao động Việt Nam phải tuân thủ pháp luật về lao động của Việt Nam và thực hiện đúng các điều khoản của hợp đồng lao động đã ký kết.
+
+Về tiêu chuẩn lao động, có thể thấy rằng Nghị định này yêu cầu tổ chức, cá nhân nước ngoài phải tuân thủ các quy định của pháp luật Việt Nam về lao động, bao gồm cả tiêu chuẩn lao động. Tuy nhiên, để biết rõ hơn về các yêu cầu cụ thể về tiêu chuẩn lao động trong EVFTA, cần tham khảo các tài liệu chính thức của hiệp định này.","EVFTA Chương 13 yêu cầu các bên tôn trọng và thúc đẩy các tiêu chuẩn lao động cơ bản của ILO gồm tự do hiệp hội, xóa bỏ lao động cưỡng bức, lao động trẻ em và phân biệt đối xử. Việt Nam đã phê chuẩn nhiều Công ước ILO nhưng vẫn còn khoảng cách trong thực thi về tự do hiệp hội.",3.52,,,,,0.7777777777777778,0.9999999999
+C03,type_c,food_safety,both,gap,Yêu cầu kiểm dịch thực vật của EVFTA đối với thực phẩm xuất khẩu từ Việt Nam sang EU là gì?,"Theo thông tin bạn cung cấp, không có thông tin cụ thể về yêu cầu kiểm dịch thực vật của EVFTA (Hiệp định Thương mại Tự do giữa Liên minh châu Âu và Việt Nam) đối với thực phẩm xuất khẩu từ Việt Nam sang EU.
+
+Tuy nhiên, dựa trên các điều khoản bạn cung cấp, có thể thấy rằng:
+
+- Đối với xuất khẩu: 
+  + Kiểm dịch thực vật chỉ được thực hiện khi có yêu cầu từ hợp đồng mua bán, các Điều ước quốc tế mà Việt Nam ký kết hoặc tham gia, hoặc khi chủ vật thể yêu cầu kiểm dịch thực vật.
+  + Chủ vật thể cần có giấy chứng nhận kiểm dịch thực vật do cơ quan kiểm dịch thực vật Việt Nam cấp.
+
+- Đối với nhập khẩu vào Việt Nam:
+  + Vật thể thuộc diện kiểm dịch thực vật cần có giấy chứng nhận kiểm dịch thực vật của nước xuất khẩu.
+
+- Điều 2 cũng khẳng định việc kiểm dịch chỉ được thực hiện khi có yêu cầu từ khách hàng hoặc theo các Điều ước quốc tế.
+
+Do đó, để biết yêu cầu cụ thể của EVFTA, bạn cần tham khảo trực tiếp nội dung của Hiệp định này và các quy định thực thi liên quan đến kiểm dịch thực vật đối với thực phẩm xuất khẩu từ Việt Nam sang EU. Thông thường, các hiệp định thương mại tự do như EVFTA sẽ bao gồm các điều khoản về việc giảm thiểu hoặc loại bỏ các rào cản thương mại, bao gồm cả yêu cầu về kiểm dịch thực vật, nhằm tạo điều kiện thuận lợi cho việc xuất khẩu và nhập khẩu hàng hóa giữa các bên.","EVFTA Chương 6 về SPS yêu cầu các biện pháp kiểm dịch phải dựa trên bằng chứng khoa học và tiêu chuẩn quốc tế. Việt Nam phải đảm bảo hệ thống kiểm soát an toàn thực phẩm tương đương với EU, được EU công nhận để được hưởng ưu đãi thuế quan.",3.51,,,,,0.7272727272727273,0.0
+C04,type_c,food_safety,both,gap,CPTPP có những quy định nào về an toàn thực phẩm và Việt Nam cần điều chỉnh pháp luật như thế nào?,"Theo thông tin bạn cung cấp, không có thông tin trực tiếp về các quy định của CPTPP (Hiệp định Đối tác Toàn diện và Tiến bộ xuyên Thái Bình Dương) liên quan đến an toàn thực phẩm. Tuy nhiên, dựa trên các điều khoản trong văn bản pháp luật bạn cung cấp, có thể thấy rằng Việt Nam đã có các quy định về an toàn thực phẩm đối với thực phẩm nhập khẩu, sản xuất và kinh doanh. Dưới đây là một số quy định có liên quan:
+
+1. **Phạm vi điều chỉnh**: Các quy định của Việt Nam về an toàn thực phẩm áp dụng cho cả thực phẩm nhập khẩu và sản xuất trong nước. Điều này thể hiện qua các điều khoản về phạm vi điều chỉnh trong các văn bản quy phạm pháp luật.
+
+2. **Yêu cầu đối với thực phẩm nhập khẩu**: Thực phẩm nhập khẩu vào Việt Nam phải đảm bảo chất lượng và vệ sinh an toàn theo quy định của pháp luật Việt Nam. Cơ sở nhập khẩu thực phẩm phải chịu trách nhiệm về chất lượng và vệ sinh an toàn của thực phẩm nhập khẩu.
+
+3. **Yêu cầu kiến thức về vệ sinh an toàn thực phẩm**: Người trực tiếp sản xuất và kinh doanh thực phẩm phải có kiến thức về vệ sinh an toàn thực phẩm phù hợp với ngành nghề sản xuất và kinh doanh.
+
+4. **Kiểm tra an toàn thực phẩm**: Có quy định về trình tự, thủ tục và nội dung kiểm tra an toàn thực phẩm đối với hàng hóa có nguồn gốc thực vật dùng làm thực phẩm nhập khẩu vào Việt Nam.
+
+Để đáp ứng các yêu cầu của CPTPP và hội nhập quốc tế, Việt Nam có thể cần điều chỉnh và hoàn thiện hệ thống pháp luật về an toàn thực phẩm theo các hướng sau:
+
+- **Tăng cường áp dụng các tiêu chuẩn quốc tế**: Áp dụng hệ thống đảm bảo vệ sinh an toàn thực phẩm HACCP hoặc thực hành sản xuất tốt (GMP) tại các cơ sở sản xuất, chế biến thực phẩm.
+
+- **Tăng cường kiểm tra và quản lý**: Đẩy mạnh công tác kiểm tra, thanh tra và quản lý chặt chẽ đối với thực phẩm nhập khẩu và lưu hành trên thị trường.
+
+- **Nâng cao nhận thức và năng lực**: Nâng cao nhận thức và năng lực cho người sản xuất, kinh doanh và người tiêu dùng về tầm quan trọng của an toàn thực phẩm.
+
+- **Hài hòa hóa quy định**: Điều chỉnh và hài hòa hóa các quy định về an toàn thực phẩm với các tiêu chuẩn quốc tế và các hiệp định thương mại mà Việt Nam tham gia, trong đó có CPTPP.
+
+Việt Nam cần tiếp tục hoàn thiện và nâng cao hiệu quả thực hiện các quy định về an toàn thực phẩm để không chỉ đáp ứng các yêu cầu của CPTPP mà còn bảo vệ sức khỏe người tiêu dùng và nâng cao uy tín của hàng Việt Nam trên thị trường quốc tế.","CPTPP Chương 7 về SPS yêu cầu áp dụng các biện pháp dựa trên đánh giá rủi ro khoa học và tiêu chuẩn Codex, IPPC, OIE. Việt Nam cần tăng cường hệ thống kiểm tra, công nhận tương đương và thủ tục minh bạch trong quản lý an toàn thực phẩm.",4.26,,,,,,
+C05,type_c,labor,both,aligned,Quy định về cấm lao động cưỡng bức trong pháp luật Việt Nam có phù hợp với yêu cầu của CPTPP không?,"Để đánh giá sự phù hợp của quy định về cấm lao động cưỡng bức trong pháp luật Việt Nam với yêu cầu của CPTPP (Hiệp định Đối tác Toàn diện và Tiến bộ xuyên Thái Bình Dương), chúng ta cần xem xét các quy định liên quan trong pháp luật Việt Nam và các tiêu chuẩn lao động của CPTPP.
+
+CPTPP có các điều khoản mạnh mẽ liên quan đến lao động, trong đó có việc cấm lao động cưỡng bức. Hiệp định này yêu cầu các nước thành viên thực hiện các biện pháp hiệu quả để ngăn chặn và loại bỏ lao động cưỡng bức trong tất cả các hình thức của nó.
+
+Trong pháp luật Việt Nam, các quy định về lao động cưỡng bức và các hành vi bị nghiêm cấm trong lĩnh vực lao động, đặc biệt là khi người lao động Việt Nam đi làm việc ở nước ngoài, đã được thể hiện trong các văn bản pháp luật như Bộ luật Lao động, Nghị định về đưa người lao động Việt Nam đi làm việc ở nước ngoài theo hợp đồng, và các văn bản khác.
+
+Cụ thể:
+
+- **Bộ luật Lao động Việt Nam (2019)** có các quy định cơ bản về nguyên tắc bảo vệ quyền, lợi ích hợp pháp của người lao động, trong đó bao gồm quyền được bảo vệ khỏi lao động cưỡng bức.
+
+- **Nghị định về đưa người lao động Việt Nam đi làm việc ở nước ngoài theo hợp đồng** cũng đề cập đến các hành vi bị nghiêm cấm, bao gồm cả việc lừa đảo, cưỡng bức người lao động.
+
+Việt Nam đã ratified (phê chuẩn) các công ước cơ bản của Tổ chức Lao động Quốc tế (ILO) về lao động, trong đó có Công ước 29 và Công ước 105 tương ứng với việc cấm lao động cưỡng bức.
+
+Dựa trên các quy định pháp luật hiện hành và các cam kết quốc tế, pháp luật Việt Nam đã có các quy định cơ bản phù hợp với yêu cầu của CPTPP về cấm lao động cưỡng bức. Tuy nhiên, để đảm bảo sự phù hợp hoàn toàn và tiến bộ trong việc thực thi, Việt Nam cần tiếp tục cập nhật, hoàn thiện hệ thống pháp luật và tăng cường thực thi pháp luật hiệu quả.
+
+Tóm lại, quy định về cấm lao động cưỡng bức trong pháp luật Việt Nam về cơ bản là phù hợp với yêu cầu của CPTPP, nhưng việc Việt Nam tiếp tục hoàn thiện và thực thi các quy định này một cách hiệu quả là rất quan trọng.",CPTPP Điều 19.6 yêu cầu cấm mọi hình thức lao động cưỡng bức. Pháp luật Việt Nam nghiêm cấm lao động cưỡng bức tại Bộ luật Lao động và Bộ luật Hình sự. Tuy nhiên vẫn cần tăng cường cơ chế giám sát và thực thi hiệu quả hơn.,4.29,,,,,0.2,0.0
+C06,type_c,labor,both,aligned,Tiêu chuẩn về xóa bỏ lao động trẻ em trong EVFTA so với quy định Việt Nam như thế nào?,"Theo thông tin bạn cung cấp, chúng ta có thể thấy rằng cả EVFTA (Hiệp định Thương mại Tự do giữa Liên minh Châu Âu và Việt Nam) và các quy định của Việt Nam đều có các điều khoản liên quan đến việc bảo vệ trẻ em và ngăn chặn lao động trẻ em. Tuy nhiên, bạn không cung cấp thông tin cụ thể về tiêu chuẩn xóa bỏ lao động trẻ em trong EVFTA.
+
+Dựa trên các điều khoản bạn cung cấp từ các văn bản pháp luật của Việt Nam, có thể thấy rằng Việt Nam đã có các quy định cụ thể về việc cấm nhận trẻ em chưa đủ 15 tuổi vào làm việc, trừ một số nghề và công việc được quy định cụ thể (Điều 120). Ngoài ra, Việt Nam cũng quy định các hành vi bị coi là lạm dụng lao động trẻ em và sử dụng trẻ em làm công việc nặng nhọc, nguy hiểm hoặc tiếp xúc với chất độc hại (Điều 9 và Điều 15).
+
+Nếu EVFTA đặt ra tiêu chuẩn cao hơn hoặc cụ thể hơn về xóa bỏ lao động trẻ em so với các quy định hiện hành của Việt Nam, thì có thể bao gồm các yếu tố như:
+
+- Mức độ tuổi tối thiểu để được phép làm việc: EVFTA có thể quy định tuổi tối thiểu cao hơn 15 tuổi cho phép làm việc trong một số ngành nghề.
+- Phạm vi các công việc và nghề được phép: EVFTA có thể hạn chế hơn nữa các công việc và nghề được phép cho trẻ em dưới 18 tuổi (tuổi lao động tối thiểu theo Công ước ILO).
+- Quy trình kiểm tra và giám sát: EVFTA có thể yêu cầu Việt Nam thực hiện các biện pháp kiểm tra và giám sát nghiêm ngặt hơn để đảm bảo việc tuân thủ các quy định về lao động trẻ em.
+
+Để có thể đưa ra một so sánh cụ thể và chính xác, cần có thông tin chi tiết hơn về các tiêu chuẩn của EVFTA liên quan đến lao động trẻ em. Tuy nhiên, có thể nói rằng cả Việt Nam và EVFTA đều hướng tới mục tiêu bảo vệ trẻ em và ngăn chặn lao động trẻ em, và các tiêu chuẩn quốc tế (như của ILO) thường được sử dụng làm cơ sở cho các thỏa thuận thương mại quốc tế.","EVFTA Điều 13.4 tham chiếu Công ước ILO về xóa bỏ lao động trẻ em. Pháp luật Việt Nam cấm sử dụng lao động trẻ em dưới 15 tuổi cho công việc nặng nhọc, độc hại. Việt Nam đã phê chuẩn Công ước ILO 138 và 182 về lao động trẻ em.",3.96,,,,,0.3333333333333333,
+C07,type_c,food_safety,both,gap,Nguyên tắc tương đương trong EVFTA về an toàn thực phẩm có nghĩa là gì và tác động đến doanh nghiệp Việt Nam như thế nào?,"Nguyên tắc tương đương trong EVFTA về an toàn thực phẩm có nghĩa là các sản phẩm thực phẩm xuất khẩu của Việt Nam sang EU phải đáp ứng các tiêu chuẩn an toàn thực phẩm tương đương với tiêu chuẩn của EU. Điều này có nghĩa là các doanh nghiệp Việt Nam phải đảm bảo rằng sản phẩm của họ đáp ứng các yêu cầu về an toàn thực phẩm của EU, bao gồm cả việc tuân thủ các quy định về kiểm soát chất lượng, vệ sinh và an toàn thực phẩm.
+
+Tác động đến doanh nghiệp Việt Nam:
+
+*   **Nâng cao tiêu chuẩn an toàn thực phẩm**: EVFTA yêu cầu các doanh nghiệp Việt Nam phải nâng cao tiêu chuẩn an toàn thực phẩm của mình để đáp ứng yêu cầu của EU. 
+*   **Tăng cường năng lực cạnh tranh**: Việc đáp ứng tiêu chuẩn an toàn thực phẩm của EU giúp tăng cường năng lực cạnh tranh của các doanh nghiệp Việt Nam trên thị trường quốc tế, đặc biệt là thị trường EU.
+*   **Gia tăng cơ hội xuất khẩu**: EVFTA mở ra cơ hội xuất khẩu lớn hơn cho các doanh nghiệp Việt Nam vào thị trường EU, đặc biệt là các sản phẩm thực phẩm có thế mạnh như nông sản, thủy sản, và thực phẩm chế biến.
+*   **Yêu cầu về giấy chứng nhận**: Các doanh nghiệp Việt Nam cần phải có giấy chứng nhận về an toàn thực phẩm từ các tổ chức có thẩm quyền để xuất khẩu sản phẩm sang EU.",EVFTA Chương 6 quy định nguyên tắc tương đương cho phép một bên công nhận biện pháp SPS của bên kia là tương đương nếu đạt cùng mức độ bảo vệ. Doanh nghiệp Việt Nam xuất khẩu sang EU được hưởng lợi khi hệ thống kiểm soát Việt Nam được EU công nhận tương đương.,3.94,,,,,0.0,0.19999999998
+C08,type_c,food_safety,both,gap,CPTPP yêu cầu gì về minh bạch trong quản lý an toàn thực phẩm và Việt Nam đáp ứng như thế nào?,"CPTPP (Comprehensive and Progressive Agreement for Trans-Pacific Partnership) là một hiệp định thương mại tự do mà Việt Nam tham gia, và hiệp định này cũng đưa ra các yêu cầu về minh bạch trong quản lý an toàn thực phẩm.
+
+CPTPP yêu cầu về minh bạch trong quản lý an toàn thực phẩm:
+
+- **Công khai và minh bạch**: Các nước tham gia CPTPP phải đảm bảo rằng quy trình quản lý an toàn thực phẩm của họ được thực hiện một cách công khai và minh bạch.
+
+- **Cơ sở khoa học**: Các quyết định về an toàn thực phẩm phải dựa trên cơ sở khoa học.
+
+- **Không phân biệt đối xử**: Các nước tham gia không được áp dụng các biện pháp quản lý an toàn thực phẩm một cách phân biệt đối xử.
+
+Việt Nam đã có những bước đi để đáp ứng các yêu cầu này:
+
+- **Xây dựng và hoàn thiện hệ thống pháp luật**: Việt Nam đã xây dựng và hoàn thiện hệ thống pháp luật về an toàn thực phẩm, bao gồm Luật An toàn Thực phẩm và các nghị định, thông tư hướng dẫn.
+
+- **Tăng cường công khai và minh bạch**: Việt Nam đã tăng cường công khai và minh bạch trong quản lý an toàn thực phẩm thông qua việc công bố thông tin về an toàn thực phẩm.
+
+- **Áp dụng các tiêu chuẩn quốc tế**: Việt Nam đã áp dụng các tiêu chuẩn quốc tế về an toàn thực phẩm, như Codex Alimentarius, trong quản lý an toàn thực phẩm.
+
+- **Tăng cường năng lực quản lý**: Việt Nam đã tăng cường năng lực quản lý an toàn thực phẩm thông qua việc đào tạo và nâng cao năng lực cho các cán bộ quản lý.
+
+Tóm lại, Việt Nam đã có những nỗ lực để đáp ứng các yêu cầu của CPTPP về minh bạch trong quản lý an toàn thực phẩm. Tuy nhiên, Việt Nam cần tiếp tục hoàn thiện hệ thống pháp luật và tăng cường năng lực quản lý để đảm bảo an toàn thực phẩm cho người tiêu dùng.","CPTPP Chương 7 yêu cầu thông báo trước về biện pháp SPS mới, cho phép góp ý và giải thích cơ sở khoa học. Việt Nam đã có cơ chế tham vấn nhưng cần cải thiện về thời hạn thông báo và tính nhất quán trong áp dụng.",3.76,,,,,0.3333333333333333,
+C09,type_c,labor,both,gap,Quy định về không phân biệt đối xử trong lao động của EVFTA so với pháp luật Việt Nam như thế nào?,"EVFTA có các quy định cụ thể về không phân biệt đối xử trong lao động, bao gồm:
+
+- Không được áp dụng các quy định phân biệt đối xử về tiền lương, cơ hội nghề nghiệp và các khía cạnh khác của việc làm.
+
+- Các quy định này tương đối giống với các quy định của Bộ luật Lao động Việt Nam hiện nay.
+
+Tuy nhiên, có một điểm khác biệt quan trọng: EVFTA yêu cầu các bên thực hiện các biện pháp cần thiết để ngăn chặn và loại bỏ các hình thức lao động cưỡng bức hoặc bắt buộc, bao gồm cả lao động trẻ em. Bộ luật Lao động Việt Nam cũng có các quy định tương tự, nhưng EVFTA có các tiêu chuẩn quốc tế về vấn đề này.
+
+Tóm lại, EVFTA và pháp luật Việt Nam đều có các quy định về không phân biệt đối xử trong lao động, nhưng EVFTA có các tiêu chuẩn quốc tế cao hơn về vấn đề lao động cưỡng bức và bắt buộc.","EVFTA Điều 13.4 tham chiếu Công ước ILO về xóa bỏ phân biệt đối xử trong việc làm. Bộ luật Lao động Việt Nam cấm phân biệt đối xử theo giới tính, dân tộc, tôn giáo. Tuy nhiên cần tăng cường cơ chế thực thi và xử lý vi phạm hiệu quả hơn.",3.6,,,,,0.0,0.0
+C10,type_c,food_safety,both,gap,Hệ thống truy xuất nguồn gốc thực phẩm của Việt Nam có đáp ứng yêu cầu của EVFTA không?,"Để xác định liệu hệ thống truy xuất nguồn gốc thực phẩm của Việt Nam có đáp ứng yêu cầu của EVFTA (Hiệp định Thương mại Tự do giữa Liên minh Châu Âu và Việt Nam) hay không, chúng ta cần xem xét các yêu cầu về truy xuất nguồn gốc trong EVFTA và so sánh với các quy định hiện hành của Việt Nam liên quan đến truy xuất nguồn gốc thực phẩm.
+
+EVFTA có các yêu cầu cao về quản lý thực phẩm, bao gồm cả truy xuất nguồn gốc, nhằm đảm bảo an toàn thực phẩm và tuân thủ các tiêu chuẩn quốc tế. Hiệp định này thúc đẩy việc áp dụng các hệ thống quản lý an toàn thực phẩm, bao gồm hệ thống truy xuất nguồn gốc, để đảm bảo rằng các sản phẩm thực phẩm có thể được theo dõi và xác định nguồn gốc một cách rõ ràng.
+
+Từ các thông tin đã cung cấp, Việt Nam đã có các quy định cụ thể về truy xuất nguồn gốc thực phẩm, như Điều 7, Điều 10 và các điều khác trong văn bản pháp lý được tham khảo. Các quy định này đề cập đến việc thiết lập và thực hiện hệ thống truy xuất nguồn gốc, yêu cầu về thông tin, và nguyên tắc kiểm tra hệ thống truy xuất nguồn gốc.
+
+## So sánh với EVFTA
+
+1. **Thiết lập hệ thống truy xuất nguồn gốc:** Việt Nam đã có quy định về việc thiết lập hệ thống truy xuất nguồn gốc cho thực phẩm, tương thích với yêu cầu của EVFTA về việc có một hệ thống theo dõi và xác định nguồn gốc sản phẩm.
+
+2. **Yêu cầu về thông tin:** Quy định của Việt Nam cũng đề cập đến yêu cầu về thông tin cho hệ thống dữ liệu truy xuất nguồn gốc, bao gồm việc ghi chép, lưu trữ thông tin, giúp đảm bảo tính minh bạch và truy xuất.
+
+3. **Kiểm tra và đánh giá:** Việc kiểm tra hệ thống truy xuất nguồn gốc được tiến hành đồng thời với hoạt động kiểm tra, đánh giá cơ sở sản xuất kinh doanh thực phẩm nông lâm sản, cho thấy sự quan tâm đến việc giám sát và đảm bảo tuân thủ.
+
+## Kết luận
+
+Dựa trên thông tin được cung cấp, có thể thấy rằng Việt Nam đã có những bước đi quan trọng trong việc thiết lập và quản lý hệ thống truy xuất nguồn gốc thực phẩm. Tuy nhiên, để khẳng định hệ thống truy xuất nguồn gốc thực phẩm của Việt Nam đáp ứng đầy đủ các yêu cầu của EVFTA, cần có một sự đánh giá chi tiết và cụ thể hơn về việc liệu các quy định và thực tiễn của Việt Nam có đáp ứng tất cả các tiêu chuẩn và yêu cầu cụ thể của EVFTA hay không.
+
+Sự tương thích và tuân thủ có thể cần được đánh giá qua các quá trình kiểm định và xác nhận cụ thể, bao gồm cả việc tham chiếu với các tiêu chuẩn quốc tế và đánh giá trực tiếp từ phía EU trong quá trình thực thi hiệp định.","EVFTA yêu cầu hệ thống truy xuất nguồn gốc đáp ứng tiêu chuẩn quốc tế để đảm bảo an toàn thực phẩm. Việt Nam đã ban hành quy định về truy xuất nguồn gốc nhưng việc áp dụng chưa đồng đều, đặc biệt với doanh nghiệp nhỏ và vừa xuất khẩu sang EU.",5.15,,,,,0.75,

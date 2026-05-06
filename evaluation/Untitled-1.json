@@ -1,0 +1,263 @@
+{
+  "name": "vilexagent",
+  "path": "e:\\vilexagent",
+  "type": "directory",
+  "children": [
+    {
+      "name": "data",
+      "type": "folder",
+      "icon": "📁"
+    },
+    {
+      "name": "docker",
+      "type": "folder",
+      "icon": "📁",
+      "children": [
+        {
+          "name": "docker-compose.yml",
+          "type": "file",
+          "icon": "⚙️"
+        }
+      ]
+    },
+    {
+      "name": "evaluation",
+      "type": "folder",
+      "icon": "📁",
+      "children": [
+        {
+          "name": "results",
+          "type": "folder",
+          "icon": "📁"
+        },
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "icon": "🐍"
+        },
+        {
+          "name": "benchmark.json",
+          "type": "file",
+          "icon": "⚙️"
+        },
+        {
+          "name": "build_benchmark.py",
+          "type": "file",
+          "icon": "🐍"
+        },
+        {
+          "name": "run_evaluation.py",
+          "type": "file",
+          "icon": "🐍"
+        }
+      ]
+    },
+    {
+      "name": "notebooks",
+      "type": "folder",
+      "icon": "📁"
+    },
+    {
+      "name": "src",
+      "type": "folder",
+      "icon": "📁",
+      "children": [
+        {
+          "name": "agents",
+          "type": "folder",
+          "icon": "📁",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "icon": "🐍"
+            },
+            {
+              "name": "cross_reference.py",
+              "type": "file",
+              "icon": "🐍"
+            },
+            {
+              "name": "domestic_retriever.py",
+              "type": "file",
+              "icon": "🐍"
+            },
+            {
+              "name": "graph.py",
+              "type": "file",
+              "icon": "🐍"
+            },
+            {
+              "name": "international_retriever.py",
+              "type": "file",
+              "icon": "🐍"
+            },
+            {
+              "name": "query_decomposer.py",
+              "type": "file",
+              "icon": "🐍"
+            },
+            {
+              "name": "state.py",
+              "type": "file",
+              "icon": "🐍"
+            },
+            {
+              "name": "synthesizer.py",
+              "type": "file",
+              "icon": "🐍"
+            },
+            {
+              "name": "test_decomposer.py",
+              "type": "file",
+              "icon": "🐍"
+            },
+            {
+              "name": "test_retrievers.py",
+              "type": "file",
+              "icon": "🐍"
+            }
+          ]
+        },
+        {
+          "name": "ingestion",
+          "type": "folder",
+          "icon": "📁",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "icon": "🐍"
+            },
+            {
+              "name": "acquire.py",
+              "type": "file",
+              "icon": "🐍"
+            },
+            {
+              "name": "acquire_international.py",
+              "type": "file",
+              "icon": "🐍"
+            },
+            {
+              "name": "embed_and_index.py",
+              "type": "file",
+              "icon": "🐍"
+            },
+            {
+              "name": "embed_international.py",
+              "type": "file",
+              "icon": "🐍"
+            },
+            {
+              "name": "filter.py",
+              "type": "file",
+              "icon": "🐍"
+            },
+            {
+              "name": "join.py",
+              "type": "file",
+              "icon": "🐍"
+            },
+            {
+              "name": "parse.py",
+              "type": "file",
+              "icon": "🐍"
+            },
+            {
+              "name": "parse_international.py",
+              "type": "file",
+              "icon": "🐍"
+            }
+          ]
+        },
+        {
+          "name": "retrieval",
+          "type": "folder",
+          "icon": "📁",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "icon": "🐍"
+            },
+            {
+              "name": "baseline.py",
+              "type": "file",
+              "icon": "🐍"
+            }
+          ]
+        },
+        {
+          "name": "utils",
+          "type": "folder",
+          "icon": "📁",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "icon": "🐍"
+            },
+            {
+              "name": "logger.py",
+              "type": "file",
+              "icon": "🐍"
+            },
+            {
+              "name": "model_loader.py",
+              "type": "file",
+              "icon": "🐍"
+            }
+          ]
+        },
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "icon": "🐍"
+        },
+        {
+          "name": "verify_setup.py",
+          "type": "file",
+          "icon": "🐍"
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "folder",
+      "icon": "📁"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "icon": "📁"
+    },
+    {
+      "name": "Makefile",
+      "type": "file",
+      "icon": "📄"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "icon": "📝"
+    },
+    {
+      "name": "poetry.lock",
+      "type": "file",
+      "icon": "📄"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "icon": "⚙️"
+    }
+  ],
+  "metadata": {
+    "generated": "2026-05-02T13:35:34.735Z",
+    "generator": "FileTree Pro Extension",
+    "version": "0.2.0",
+    "showIcons": true,
+    "maxDepth": 10
+  }
+}
