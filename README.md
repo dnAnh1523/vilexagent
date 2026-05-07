@@ -1,7 +1,11 @@
-# ⚖️ ViLexAgent
+# ⚖️ ViLexAgent: Multi-Agent RAG for Vietnamese Legal Q&A
 
-> **A Multi-Agent RAG System for Vietnamese Legal Q&A**  
-> Supports Vietnamese labor law, food safety regulations, and international trade agreements (EVFTA, CPTPP).
+[![Python](https://img.shields.io/badge/Python-3.13-blue.svg)](https://python.org)
+[![LangGraph](https://img.shields.io/badge/Agent-LangGraph-orange.svg)](https://langchain.com/langgraph)
+[![Qdrant](https://img.shields.io/badge/VectorDB-Qdrant-red.svg)](https://qdrant.tech)
+[![Chainlit](https://img.shields.io/badge/UI-Chainlit-green.svg)](https://chainlit.io)
+
+> **An advanced, agentic Retrieval-Augmented Generation (RAG) system specifically designed for navigating Vietnamese law and international trade agreements.**
 
 ---
 
