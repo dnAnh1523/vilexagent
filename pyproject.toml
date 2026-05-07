@@ -33,7 +33,8 @@ dependencies = [
     "bitsandbytes (>=0.49.2,<0.50.0)",
     "google-generativeai (>=0.8.6,<0.9.0)",
     "litellm (>=1.83.14,<2.0.0)",
-    "langchain-ollama (>=1.1.0,<2.0.0)"
+    "langchain-ollama (>=1.1.0,<2.0.0)",
+    "chainlit (>=2.11.1,<3.0.0)"
 ]
 
 [[tool.poetry.source]]

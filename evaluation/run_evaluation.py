@@ -27,7 +27,7 @@ for var in REQUIRED_ENV_VARS:
         raise ValueError(f"Missing required environment variable: {var}")
 
 BENCHMARK_PATH = Path("evaluation/benchmark.json")
-RESULTS_DIR = Path("evaluation/results/custom_eval_result")
+RESULTS_DIR = Path("evaluation/results/final_eval")
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
 PER_QUESTION_DELAY   = int(os.getenv("EVAL_QUESTION_DELAY", 5))
