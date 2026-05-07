@@ -60,11 +60,11 @@ User Query
 | Agent Orchestration | LangGraph 1.1 |
 | Vector Database | Qdrant |
 | Embedding Model | Jina Embeddings v5 Small (4-bit, CUDA) |
-| LLM Backend | LiteLLM (OpenAI-compatible) |
+| LLM | FreeLLMAPI (OpenAI-compatible) |
 | OCR / PDF Parsing | PaddleOCR, PyMuPDF |
 | Vietnamese NLP | Underthesea |
-| Experiment Tracking | MLflow |
-| Evaluation | RAGAS |
+| Experiment Tracking (optional) | MLflow |
+| Evaluation | Custom (RAGAS-based) |
 | Runtime | Python 3.13, Poetry |
 
 ---
@@ -127,9 +127,13 @@ poetry install
 
 Create a `.env` file in the project root:
 ```env
-LLM_BASE_URL=http://localhost:3001/v1
-LLM_API_KEY=your_api_key_here
-LLM_MODEL=your_model_name
+GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY_HERE
+QDRANT_URL=http://localhost:6333 
+MLFLOW_TRACKING_URI=http://localhost:5000 
+# OLLAMA_BASE_URL = http://localhost:11434 # Uncomment and set the OLLAMA_BASE_URL if you are using Ollama for local LLM hosting
+GROQ_API_KEY=YOUR_GROQ_API_KEY_HERE
+FREELLM_BASE_URL=http://localhost:3001/v1 
+FREELLM_API_KEY=YOUR_FREELLM_API_KEY_HERE # You need to clone this repo first: https://github.com/tashfeenahmed/freellmapi
 ```
 
 **4. Start Qdrant**
@@ -172,19 +176,6 @@ Việt Nam có đáp ứng các tiêu chuẩn lao động của CPTPP về tự 
 
 ---
 
-## Configuration
-
-Key settings in `chainlit.md` (UI welcome screen) and `.chainlit/config.toml`:
-
-| Setting | Location | Description |
-|---|---|---|
-| `cot` | `config.toml [UI]` | Chain-of-thought display: `"full"` shows all steps |
-| `session_timeout` | `config.toml [project]` | Session retention in seconds |
-| `LLM_BASE_URL` | `.env` | OpenAI-compatible LLM endpoint |
-| `LLM_MODEL` | `.env` | Model name passed to LiteLLM |
-
----
-
 ## Evaluation
 
 The system includes a RAGAS-based evaluation suite in `evaluation/` with a benchmark of labeled legal Q&A pairs across three difficulty types:
@@ -193,7 +184,7 @@ The system includes a RAGAS-based evaluation suite in `evaluation/` with a bench
 - **Type B** — Multi-aspect domestic queries requiring reasoning across clauses
 - **Type C** — Cross-reference queries requiring domestic + international alignment
 
-Run evaluation:
+Run evaluation (Optional):
 ```bash
 poetry run python evaluation/run_evaluation.py
 ```
@@ -211,4 +202,4 @@ This project is for educational and portfolio purposes.
 
 ---
 
-*Built with LangGraph · Qdrant · Chainlit · Jina Embeddings*
+*Built with Claude*
