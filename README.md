@@ -1,24 +1,27 @@
-# ⚖️ ViLexAgent: Multi-Agent RAG for Vietnamese Legal Q&A
+# ViLexAgent ⚖️
 
-[![Python](https://img.shields.io/badge/Python-3.13-blue.svg)](https://python.org)
-[![LangGraph](https://img.shields.io/badge/Agent-LangGraph-orange.svg)](https://langchain.com/langgraph)
-[![Qdrant](https://img.shields.io/badge/VectorDB-Qdrant-red.svg)](https://qdrant.tech)
-[![Chainlit](https://img.shields.io/badge/UI-Chainlit-green.svg)](https://chainlit.io)
+**A Multi-Agent Retrieval-Augmented Generation System for Vietnamese Regulatory Compliance Question Answering**
 
-> **An advanced, agentic Retrieval-Augmented Generation (RAG) system specifically designed for navigating Vietnamese law and international trade agreements.**
+ViLexAgent is an agentic RAG system purpose-built for complex Vietnamese legal and regulatory queries. It combines a role-specialized multi-agent pipeline with a dual-corpus knowledge base covering domestic Vietnamese legislation and international trade agreements (EVFTA, CPTPP), enabling cross-document reasoning that single-agent RAG systems cannot perform.
 
 ---
 
-## Overview
+## Demo
 
-ViLexAgent is an agentic Retrieval-Augmented Generation (RAG) system that answers complex legal questions about Vietnamese law and its compliance with international trade agreements. The system decomposes user queries into sub-questions, retrieves relevant legal documents from a vector database, cross-references domestic law with international standards, and synthesizes a cited, legally-grounded answer.
+![ViLexAgent UI](docs/demo.png)
 
-**Key capabilities:**
-- Query decomposition into domain-specific sub-questions (labor law, food safety)
-- Hybrid retrieval from domestic Vietnamese legal documents and international treaty clauses (EVFTA, CPTPP)
-- Automatic cross-reference analysis with alignment scoring (`aligned` / `conflict` / `gap` / `no_international`)
-- Expired document detection with explicit warnings
-- Step-by-step reasoning trace visible in the UI
+```
+Query: "Việt Nam có đáp ứng các tiêu chuẩn lao động của CPTPP về tự do hiệp hội không?"
+
+💭 Thought
+  🔍 Phân tích câu hỏi     → 4 sub-questions (domestic + international)
+  📚 Tra cứu pháp luật VN  → 10 văn bản (Luật Công đoàn, Bộ luật Lao động...)
+  🌐 Tra cứu quốc tế       → 8 điều khoản (CPTPP Ch.19, EVFTA Ch.13)
+  ⚖️ Đối chiếu pháp luật   → ❌ Mâu thuẫn
+  ✍️ Tổng hợp câu trả lời  → 3,039 ký tự
+
+Answer: Việt Nam hiện chưa đáp ứng đầy đủ...
+```
 
 ---
 
@@ -28,44 +31,54 @@ ViLexAgent is an agentic Retrieval-Augmented Generation (RAG) system that answer
 User Query
     │
     ▼
-┌─────────────────────┐
-│   Query Decomposer  │  → Sub-questions + domain tags (labor / food_safety)
-└─────────────────────┘
+Query Decomposer          ← Breaks query into sub-questions, tags source & domain
     │
-    ├──────────────────────────────────┐
-    ▼                                  ▼
-┌──────────────────┐        ┌──────────────────────────┐
-│ Domestic         │        │ International             │
-│ Retriever        │        │ Retriever                 │
-│ (Qdrant + Jina)  │        │ (Qdrant + Jina)           │
-└──────────────────┘        └──────────────────────────┘
-    │                                  │
-    └──────────────┬───────────────────┘
+    ├──────────────────────────────────────┐
+    ▼                                      ▼
+Domestic Retriever                 International Retriever
+(vilexagent_domestic)              (vilexagent_international)
+Jina v5 embeddings                 Jina v5 embeddings
+45,544 chunks                      112 chunks
+Vietnamese law corpus              EVFTA + CPTPP chapters
+    │                                      │
+    └──────────────┬───────────────────────┘
                    ▼
-        ┌─────────────────────┐
-        │   Cross-Reference   │  → alignment: aligned / conflict / gap
-        └─────────────────────┘
+          Cross-Reference Agent     ← Detects alignment/conflict/gap
                    │
                    ▼
-        ┌─────────────────────┐
-        │     Synthesizer     │  → Final answer with citations
-        └─────────────────────┘
+          Synthesis Agent           ← Generates cited Vietnamese answer
+                   │
+                   ▼
+          Final Answer + Citations + Legal Currency Warning
 ```
 
-**Tech Stack:**
+---
 
-| Layer | Technology |
+## Evaluation Results (30 questions)
+
+| System | Faithfulness | Context Precision | Groundedness | Decomp Accuracy | Legal Currency |
+|---|---|---|---|---|---|
+| Baseline1 NaiveRAG | — | — | 2.20/5 | — | — |
+| Baseline2 RAG+Rerank | — | — | 2.80/5 | — | — |
+| **ViLexAgent** | — | — | **4.35/5** | **100%** | **100%** |
+
+**Key finding:** ViLexAgent achieves 2× better groundedness than single-agent baselines, with 100% expired document warning rate and 96.67% citation grounding. Latency trade-off: ~20s vs ~3.5s for baselines.
+
+---
+
+## Tech Stack
+
+| Layer | Tool |
 |---|---|
-| UI | Chainlit 2.11 |
-| Agent Orchestration | LangGraph 1.1 |
-| Vector Database | Qdrant |
-| Embedding Model | Jina Embeddings v5 Small (4-bit, CUDA) |
-| LLM | FreeLLMAPI (OpenAI-compatible) |
-| OCR / PDF Parsing | PaddleOCR, PyMuPDF |
-| Vietnamese NLP | Underthesea |
-| Experiment Tracking (optional) | MLflow |
-| Evaluation | Custom (RAGAS-based) |
-| Runtime | Python 3.13, Poetry |
+| Agent Orchestration | LangGraph 1.1.10 |
+| UI | Chainlit 2.11.1 |
+| LLM | Gemini 2.5 Flash via FreeLLMAPI |
+| Embeddings | Jina v5 text-small (1024-dim) |
+| Reranker | BGE-Reranker-v2-M3 |
+| Vector DB | Qdrant (local Docker) |
+| Experiment Tracking | MLflow |
+| Logging | Loguru |
+| Containerization | Docker Compose |
 
 ---
 
@@ -74,132 +87,203 @@ User Query
 ```
 vilexagent/
 ├── app/
-│   └── vilexagent_ui.py       # Chainlit UI entry point
+│   └── vilexagent_ui.py        # Chainlit UI
 ├── src/
 │   ├── agents/
-│   │   ├── state.py               # AgentState (LangGraph TypedDict)
-│   │   ├── query_decomposer.py    # Query decomposition node
-│   │   ├── domestic_retriever.py  # Vietnamese law retrieval node
-│   │   ├── international_retriever.py  # EVFTA/CPTPP retrieval node
-│   │   ├── cross_reference.py     # Cross-reference analysis node
-│   │   ├── synthesizer.py         # Answer synthesis node
-│   │   └── graph.py               # LangGraph pipeline definition
-│   ├── ingestion/                 # Document ingestion pipeline
-│   ├── retrieval/                 # Retrieval utilities
+│   │   ├── state.py            # LangGraph AgentState
+│   │   ├── query_decomposer.py # Node 1: query decomposition
+│   │   ├── domestic_retriever.py  # Node 2: Vietnamese law retrieval
+│   │   ├── international_retriever.py  # Node 3: EVFTA/CPTPP retrieval
+│   │   ├── cross_reference.py  # Node 4: conflict detection
+│   │   ├── synthesizer.py      # Node 5: answer generation
+│   │   └── graph.py            # LangGraph pipeline
+│   ├── ingestion/              # Data pipeline scripts
+│   ├── retrieval/
+│   │   └── baseline.py         # Baseline retriever for evaluation
 │   └── utils/
-│       ├── llm.py                 # LLM client (LiteLLM wrapper)
-│       ├── model_loader.py        # Singleton embedding model loader
-│       ├── logger.py              # Loguru logger
-│       └── json_utils.py          # Robust JSON extractor
-├── evaluation/                    # RAGAS benchmark suite
-├── docker/                        # Docker/Qdrant setup
-├── tests/
-├── pyproject.toml
-└── chainlit.md
+│       ├── llm.py              # FreeLLMAPI singleton
+│       ├── model_loader.py     # Jina v5 singleton
+│       └── logger.py           # Loguru configuration
+├── evaluation/
+│   ├── benchmark.json          # 30 questions (Type A/B/C)
+│   ├── build_benchmark.py
+│   ├── run_evaluation.py       # 3-system evaluation pipeline
+│   └── results/final_eval/     # Full evaluation results
+├── data/
+│   ├── raw/                    # Downloaded corpora
+│   └── processed/              # Parsed chunks
+├── docker/
+│   └── docker-compose.yml      # Qdrant + MLflow
+└── tests/
+    ├── test_decomposer.py
+    └── test_retrievers.py
 ```
 
 ---
 
-## Installation
+## Prerequisites
 
-### Prerequisites
+- Python 3.12+
+- Docker Desktop (for Qdrant and MLflow)
+- NVIDIA GPU with CUDA 12+ (for Jina v5 embeddings on GPU)
+- Node.js 20+ (for FreeLLMAPI)
+- Google AI Studio API key (free at aistudio.google.com)
 
-- Python 3.13
-- [Poetry](https://python-poetry.org/docs/#installation)
-- CUDA-capable GPU (recommended: 4GB+ VRAM)
-- [Qdrant](https://qdrant.tech/documentation/quick-start/) running locally on port `6333`
-- An OpenAI-compatible LLM API endpoint on port `3001`
+---
 
-### Steps
+## Setup
 
-**1. Clone the repository**
-```bash
+### 1. Clone and install dependencies
+
+```powershell
 git clone https://github.com/dnAnh1523/vilexagent.git
 cd vilexagent
-```
-
-**2. Install dependencies**
-```bash
 poetry install
 ```
 
-**3. Set up environment variables**
+### 2. Configure environment
 
-Create a `.env` file in the project root:
+Copy `.env.example` to `.env` and fill in:
+
 ```env
-GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY_HERE
-QDRANT_URL=http://localhost:6333 
-MLFLOW_TRACKING_URI=http://localhost:5000 
-# OLLAMA_BASE_URL = http://localhost:11434 # Uncomment and set the OLLAMA_BASE_URL if you are using Ollama for local LLM hosting
-GROQ_API_KEY=YOUR_GROQ_API_KEY_HERE
-FREELLM_BASE_URL=http://localhost:3001/v1 
-FREELLM_API_KEY=YOUR_FREELLM_API_KEY_HERE # You need to clone this repo first: https://github.com/tashfeenahmed/freellmapi
+GOOGLE_API_KEY=your_gemini_api_key
+FREELLM_API_KEY=your_freellmapi_unified_key
+FREELLM_BASE_URL=http://localhost:3001/v1
+QDRANT_URL=http://localhost:6333
+MLFLOW_TRACKING_URI=http://localhost:5000
 ```
 
-**4. Start Qdrant**
-```bash
+### 3. Start infrastructure
+
+```powershell
 docker compose -f docker/docker-compose.yml up -d
 ```
 
-**5. Ingest documents**
+### 4. Start FreeLLMAPI (LLM proxy)
 
-Place your Vietnamese legal PDFs and international treaty documents in the `data/` directory, then run the ingestion pipeline (see `src/ingestion/`).
+```powershell
+# In a separate terminal
+cd E:\freellmapi
+npm run dev
+# Open http://localhost:5173 and add your Google API key
+```
 
-**6. Run the app**
-```bash
+### 5. Build the corpus (first time only)
+
+```powershell
+# Download Vietnamese legal documents
+poetry run python -m src.ingestion.acquire
+
+# Filter, parse, and chunk
+poetry run python -m src.ingestion.filter
+poetry run python -m src.ingestion.join
+poetry run python -m src.ingestion.parse
+
+# Download international chapters (EVFTA, CPTPP)
+poetry run python -m src.ingestion.acquire_international
+poetry run python -m src.ingestion.parse_international
+
+# Embed and index into Qdrant
+poetry run python -m src.ingestion.embed_and_index
+poetry run python -m src.ingestion.embed_international
+```
+
+**Note:** Embedding 45,544 chunks takes ~1.5 hours on an RTX 3050. The Qdrant volume persists between restarts — you only need to do this once.
+
+### 6. Verify setup
+
+```powershell
+poetry run python -m src.verify_setup
+```
+
+### 7. Run the UI
+
+```powershell
 poetry run chainlit run app/vilexagent_ui.py --port 8000
 ```
 
-Open `http://localhost:8000` in your browser.
+Open `http://localhost:8000`.
 
 ---
 
-## Usage
+## Running Evaluation
 
-Once running, you can ask questions in Vietnamese about:
+```powershell
+# Run 5-question pilot
+poetry run python -m evaluation.run_evaluation
 
-- **Labor law** — probationary periods, wrongful termination compensation, minimum wage, overtime
-- **Food safety** — export conditions, hygiene standards, quarantine requirements
-- **International compliance** — whether Vietnamese law meets EVFTA/CPTPP standards
-
-The UI displays a step-by-step reasoning trace (collapsible) showing which documents were retrieved, cross-reference results, and alignment scores before the final answer.
-
-**Example questions:**
+# Run full 30-question evaluation
+$env:EVAL_MAX_QUESTIONS=30
+poetry run python -m evaluation.run_evaluation
 ```
-Thời gian thử việc tối đa theo pháp luật lao động Việt Nam là bao lâu?
 
-Nếu người sử dụng lao động đơn phương chấm dứt hợp đồng trái pháp luật
-thì phải bồi thường những gì cho người lao động?
-
-Việt Nam có đáp ứng các tiêu chuẩn lao động của CPTPP về tự do hiệp hội không?
-```
+Results are saved to `evaluation/results/` and logged to MLflow at `http://localhost:5000`.
 
 ---
 
-## Evaluation
+## Corpus Details
 
-The system includes a RAGAS-based evaluation suite in `evaluation/` with a benchmark of labeled legal Q&A pairs across three difficulty types:
+| Corpus | Source | Documents | Chunks |
+|---|---|---|---|
+| Vietnamese domestic law | vbpl.vn (HuggingFace dataset) | 8,596 | 45,544 |
+| EVFTA chapters | thuvienphapluat.vn + trungtamwto.vn | 2 chapters | 52 |
+| CPTPP chapters | mfat.govt.nz | 2 chapters | 60 |
 
-- **Type A** — Single-domain factual queries (domestic law only)
-- **Type B** — Multi-aspect domestic queries requiring reasoning across clauses
-- **Type C** — Cross-reference queries requiring domestic + international alignment
+**Domains covered:** Labor law, Food safety & SPS measures
 
-Run evaluation (Optional):
-```bash
-poetry run python evaluation/run_evaluation.py
+**Legal basis for use:** Vietnamese legal documents are public domain under Law on Access to Information (No. 104/2016/QH13) and Law on Promulgation of Legal Documents (No. 64/2025/QH15).
+
+---
+
+## Key Design Decisions
+
+**Article-level chunking:** Legal documents are split at article boundaries (`Điều X`) rather than fixed token counts, preserving legal meaning across chunk boundaries.
+
+**Two-model embedding strategy:** Domestic Vietnamese law uses Jina v5 (Vietnamese-capable, 1024-dim). International documents use the same model for cross-lingual alignment, stored in a separate Qdrant collection to enforce retrieval isolation.
+
+**Legal Currency Score:** A custom metric that flags answers citing expired (`Hết hiệu lực`) legislation. The system achieves 100% warning rate — every answer referencing expired law explicitly notifies the user.
+
+**FreeLLMAPI proxy:** All LLM calls route through a local OpenAI-compatible proxy aggregating free tiers from Google, Groq, Cerebras, and Mistral, providing automatic failover and ~1B tokens/month capacity at zero cost.
+
+---
+
+## Limitations
+
+- **Alignment accuracy:** Cross-reference agent achieves 50% accuracy on Type C (cross-corpus) questions. Primary failure modes: ambiguous `conflict` vs `gap` distinction in the prompt, and retrieval of expired domestic documents distorting cross-reference reasoning.
+- **Latency:** Average 20s per query due to multi-agent pipeline. Not suitable for real-time applications without optimization.
+- **Corpus coverage:** Limited to labor law and food safety domains. Other regulatory areas (IP, customs, taxation) are not covered.
+- **GraphRAG:** The 897,890-record cross-document relationship graph (amendment chains, citation networks) was downloaded but not integrated. Planned as future work.
+
+---
+
+## Future Work
+
+- GraphRAG integration using the existing relationship graph for amendment chain traversal
+- Expand corpus to IP law (CPTPP Chapter 18) and customs (RCEP)
+- Fine-tune Jina v5 on Vietnamese legal domain for improved retrieval precision
+- Streaming responses in the Chainlit UI
+- Reduce latency via parallel agent execution
+
+---
+
+## Citation
+
+If you use this work, please cite:
+
 ```
-
-Results are tracked with MLflow. Start the MLflow UI:
-```bash
-poetry run mlflow ui
+@mastersthesis{vilexagent2026,
+  title     = {ViLexAgent: A Multi-Agent Retrieval-Augmented Generation System
+               for Vietnamese Regulatory Compliance Question Answering},
+  author    = {Nguyen Nhat Anh},
+  year      = {2026},
+  school    = {Applied Master of Science in Computer Science}
+}
 ```
 
 ---
 
 ## License
 
-This project is for educational and portfolio purposes.
+MIT License. See `LICENSE` for details.
 
----
-
-*Built with Claude*
+Vietnamese legal documents used in this project are public domain under Vietnamese law.
