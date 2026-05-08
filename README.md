@@ -10,12 +10,10 @@ ViLexAgent is an agentic RAG system purpose-built for complex Vietnamese legal a
 
 <p align="center">
   <a href="https://youtu.be/NiSOUBOXjiU">
-    <img src="./assets/thumbnail.gif" width="900" alt="ViLexAgent Demo">
+    <img src="https://img.youtube.com/vi/NiSOUBOXjiU/maxresdefault.jpg"
+         width="700"
+         alt="Watch Demo">
   </a>
-</p>
-
-<p align="center">
-  Click the image above to watch the full demo
 </p>
 
 ```
