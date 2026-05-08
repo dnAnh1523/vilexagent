@@ -9,7 +9,11 @@ ViLexAgent is an agentic RAG system purpose-built for complex Vietnamese legal a
 ## Demo
 
 <p align="center">
-  <img src="./assets/demo.gif" width="850"/>
+  <img 
+    src="./assets/demo.gif"
+    width="900"
+    style="border-radius:20px;"
+  />
 </p>
 
 ```
