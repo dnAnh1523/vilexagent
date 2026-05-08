@@ -278,9 +278,9 @@ If you use this work, please cite:
 @mastersthesis{vilexagent2026,
   title     = {ViLexAgent: A Multi-Agent Retrieval-Augmented Generation System
                for Vietnamese Regulatory Compliance Question Answering},
-  author    = {Nguyen Nhat Anh},
+  author    = {Do Nhat Anh},
   year      = {2026},
-  school    = {Applied Master of Science in Computer Science}
+  school    = {THAI NGUYEN UNIVERSITY OF INFORMATION AND COMMUNICATION TECHNOLOGY}
 }
 ```
 
