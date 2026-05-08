@@ -8,7 +8,10 @@ ViLexAgent is an agentic RAG system purpose-built for complex Vietnamese legal a
 
 ## Demo
 
-![ViLexAgent UI](docs/demo.png)
+<video width="100%" autoplay loop muted playsinline>
+  <source src="./assets/demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ```
 Query: "Việt Nam có đáp ứng các tiêu chuẩn lao động của CPTPP về tự do hiệp hội không?"
