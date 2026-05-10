@@ -29,6 +29,8 @@ Query: "Việt Nam có đáp ứng các tiêu chuẩn lao động của CPTPP v�
 Answer: Việt Nam hiện chưa đáp ứng đầy đủ...
 ```
 
+# [![HuggingFace Space](https://img.shields.io/badge/🤗-Open%20in%20Spaces-blue)](https://huggingface.co/spaces/dnanh/vilexagent)
+
 ---
 
 ## Architecture
